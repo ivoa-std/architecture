@@ -12,7 +12,11 @@ Under development.
 # Working on this Document
 
 Since authoring a document on github is an experiment, this is a little bumpy... The ivoatex
-toolkit normally relies on some subversion import magic to make it look local. The easy Linux way to fake that is to create a symlink (e.g. ivoatex -> ivoatex -> ../../volute.svn/ivoapub/ivoatex/), run "make", and hope you have all the necessary tools installed.
+toolkit normally relies on some subversion import magic to make it look local. The easy Linux way to fake that is to create a symlink, e.g. 
+
+ivoatex -> ivoatex -> ../../volute.svn/ivoapub/ivoatex/
+
+Then: run "make" and hope you have all the necessary tools installed.
 
 # License
 
