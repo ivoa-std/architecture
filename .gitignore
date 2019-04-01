@@ -1,0 +1,9 @@
+ivoatex
+*.aux
+*.log
+*.out
+*.pdf
+*.toc
+*.png
+*.svg
+ivoatexmeta.tex
