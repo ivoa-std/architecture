@@ -11,10 +11,9 @@ Under development.
 
 # Working on this Document
 
-Since authoring a document on github is an experiment, this is a little bumpy... The ivoatex
-toolkit normally relies on some subversion import magic to make it look local. The easy Linux way to fake that is to create a symlink, e.g. 
+Remember to checkout the repository with its submodules.
 
-ivoatex -> ivoatex -> ../../volute.svn/ivoapub/ivoatex/
+    git clone --recurse-submodules https://github.com/ivoa-std/architecture.git
 
 Then: run "make" and hope you have all the necessary tools installed.
 
