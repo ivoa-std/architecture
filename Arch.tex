@@ -68,10 +68,15 @@ enable these functionalities in perpetuity, the definition of some core astronom
 standards so data from different providers can be combined (``Interoperable'') to enable
 new scientific discoveries (``Reusable'').
 
-The previous IVOA Architecture used terms ``Finding'', ``Getting'', ``Using'', and ``Sharing``;
+The IVOA Architecture uses terms ``Finding'', ``Getting'', ``Using'', and ``Sharing``;
 these are collectively equivalent to ``Findable'', ``Accessible'', ``Interoperable'', and
 ``Reusable'': the FAIR principles have always been the basis of the IVOA Architecture
-even before the term was formally coined in 2016 (ref).
+even before the term was formally coined \citep{Wilkinson2016}. The world wide
+astronomy community has long supported sharing and reusability of data (e.g. through standards 
+like FITS \citep{std:FITS}). Within the IVOA community, interoperability has been the cornerstone
+of development of standards and the concepts of reusability and interoperability go beyond 
+metadata and data as they also guide the development of standards for applications, services, 
+and infrastructure for research, education, and public outreach.
 
 \section{IVOA Architecture Level 1}
 
@@ -141,13 +146,29 @@ on (blue boxes without an outer line).
 Note that this list  (and standard  status) will naturally evolve with time. More 
 standards will be approved and recommended. Additionally, as driven by science use 
 cases, new standards will be identified and added to that Fig.~\ref{fig:architecture2}. 
-The following sections provide a summary description of each individual standard, including 
-where it fits into the IVOA architecture and its possible links with other IVOA standards.
 
 The following sections provide a summary description of each current standard, including 
-where it fits into the IVOA architecture and its links with other IVOA standards.
+where it fits into the IVOA architecture and its links with other IVOA standards. The links 
+(arrows) in the diagrams below indicate a ``used by'' dependency: readers wanting to 
+understand the full scope of a standard will also need to look at the other indicated 
+standards. The standards shown in blue boxes are the subject of the section; boxes in light 
+gray can be found in a different section/diagram. In some cases, green boxes are used to shown
+external standards that provide an important or notable part of the IVOA standard. A white 
+rounded boxc around several standards indicates a group of standards that share dependencies
+(to simply the diagrams).
+
+All IVOA standards documents are published in the IVOA Document Repository:
+
+https://www.ivoa.net/documents/
+
 
 \section{Authentication and Authorization}
+
+The authentiation and authorization architecture is primarily an endorsement of existing
+industry standards and technologies that suit the use cases of the IVOA community. The standards
+in this area provide some recomemndations and ``glue'' so that participants (application
+developers, metadata and data providers, and resource providers) can easily implement interoperable
+systems.
 
 \begin{figure}[h]
 \centering
@@ -158,7 +179,7 @@ where it fits into the IVOA architecture and its links with other IVOA standards
 
 \subsection{SSO}
 
-The Single-Sign-On profile describes authentiation mehcanisms. Approved client-server 
+The Single-Sign-On profile describes authentication mehcanisms. Approved client-server 
 authentication mechanisms are described for the IVOA single-sign-on profile: No Authentication; 
 HTTP Basic Authentication; TLS with passwords; TLS with client certificates; Cookies; Open 
 Authentication; Security Assertion Markup Language; OpenID. Normative rules are given for 
@@ -190,10 +211,7 @@ scalable mechanism for sharing proprietary assets with a potentially dynamic set
 
 \section{Application and Format Standards}
 
-Reusable in FAIR is about making persisted metadata and data reusable now and in future... 
-the IVOA "format" standards in this section seem mostly aimed at enabling interoperabability
-and much less at persistent reusable metadata and data (not that they can't support that, 
-just not particularly designed for that).
+TODO: The application and format standards...
 
 \begin{figure}[h]
 \centering
@@ -241,6 +259,9 @@ requirements.
 
 \section{Semantics Standards}
 
+TODO: The semantics standards provide some of the base tools for creating and curating reusable
+and interoperable metadata...
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.32\textwidth]{ivoa-arch-semantics.png}
@@ -283,7 +304,7 @@ build Unified Content Descriptors, Version 1+ (UCD1+).
 
 \subsection{Current Vocabularies}
 
-TODO
+TODO: list current vocabulary URLs here?
 
 \section{Registry Standards}
 
@@ -308,44 +329,80 @@ of services in the Registry.  Figure X shows how various Registry standards rela
 
 \subsection{Identifier}
 
-An IVOA Resource Identifier (or IVOA identifier or IVOA ID for short) is a globally unique reference to a resource represented in a compact, ASCII-text format.  An IVOA identifier MUST always refer to a resource that has been registered with an IVOA-compliant registry; that is, it should be possible to use the ID to get a description of the resource from a compliant registry somewhere in the VO environment.
+An IVOA Resource Identifier (or IVOA identifier or IVOA ID for short) is a globally unique reference 
+to a resource represented in a compact, ASCII-text format.  An IVOA identifier MUST always refer to 
+a resource that has been registered with an IVOA-compliant registry; that is, it should be possible 
+to use the ID to get a description of the resource from a compliant registry somewhere in the VO 
+environment.
 
 \subsection{VOResource}
 
-VOResource describes an encoding standard for IVOA Resource Metadata. The primary intended use of VOResource is to provide an XML interchange format for use with resource registries. A registry is a repository of resource descriptions and is employed by users and applications to discover resources. VOResource can be used to pass descriptions from publishers to registries and then from registries to applications. Another intended use is as a language for services to describe themselves directly.
+VOResource describes an encoding standard for IVOA Resource Metadata. The primary intended use of 
+VOResource is to provide an XML interchange format for use with resource registries. A registry is 
+a repository of resource descriptions and is employed by users and applications to discover resources. 
+VOResource can be used to pass descriptions from publishers to registries and then from registries to 
+applications. Another intended use is as a language for services to describe themselves directly.
 
 \subsection{VODataService}
 
-The VODataService standard makes discovery possible.  It is an encoding standard that enables one to describe how the data underlying the resource covers the sky as well as their frequency and time. VODataService also enables detailed descriptions of tables that include information useful to the discovery of tabular data. 
+The VODataService standard makes discovery possible.  It is an encoding standard that enables one to 
+describe how the data underlying the resource covers the sky as well as their frequency and time. 
+VODataService also enables detailed descriptions of tables that include information useful to the 
+discovery of tabular data. 
 
 \subsection{Registry Interface}
 
-The Registry Interface defines the interfaces that support interactions between applications and registries as well as between the registries themselves.  It is based on a general, distributed model composed of searchable and publishing registries. The specification has two main components: (a) an interface for searching and (b) an interface for harvesting.  Finally, Registry Interface details the metadata used to describe registries themselves as resources using an extension of the VOResource metadata schema.
+The Registry Interface defines the interfaces that support interactions between applications and 
+registries as well as between the registries themselves.  It is based on a general, distributed 
+model composed of searchable and publishing registries. The specification has two main components: 
+(a) an interface for searching and (b) an interface for harvesting.  Finally, Registry Interface 
+details the metadata used to describe registries themselves as resources using an extension of the 
+VOResource metadata schema.
 
 \subsection{Resource Metadata}
 
-The Resource Metadata standard represents the essential capability to describe what data and computational facilities are available where, and once identified, how to use them.  The data themselves have associated metadata (e.g., FITS keywords), and similarly we require metadata about data collections and data services so that VO users can easily find information of interest.  
+The Resource Metadata standard represents the essential capability to describe what data and 
+computational facilities are available where, and once identified, how to use them.  The data 
+themselves have associated metadata (e.g., FITS keywords), and similarly we require metadata 
+about data collections and data services so that VO users can easily find information of interest.  
 
 \subsection{ApplicationRegExt}
 
-ApplicationRegExt is part of the registry standards that make discovery of VOApplications possible.  ApplicationRegExt refers to an encoding standard for a specialized extension of the IVOA Resource Metadata that is useful for describing VO Applications.  By registering a VO Application in a Registry, it gets a unique IVOA Resource Identifier which then can be referred to by other applications and services. 
+ApplicationRegExt is part of the registry standards that make discovery of VOApplications possible.  
+ApplicationRegExt refers to an encoding standard for a specialized extension of the IVOA Resource 
+Metadata that is useful for describing VO Applications.  By registering a VO Application in a 
+Registry, it gets a unique IVOA Resource Identifier which then can be referred to by other 
+applications and services. 
 
 \subsection{SimpleDALRegExt}
 
-SimpleDALRegExt is part of the registry standards that make discovery of Simple DAL services possible (e.g., SIAP, SCS, SSAP, SLAP).  SimpleDALRegExt refers to an encoding standard for a specialized extension of the IVOA Resource Metadata that is useful for describing VO Simple DAL Services.  By registering a VO Application in a Registry, it gets a unique IVOA Resource Identifier which then can be referred to by other applications and services. 
+SimpleDALRegExt is part of the registry standards that make discovery of Simple DAL services 
+possible (e.g., SIAP, SCS, SSAP, SLAP).  SimpleDALRegExt refers to an encoding standard for a 
+specialized extension of the IVOA Resource Metadata that is useful for describing VO Simple DAL 
+Services.  By registering a VO Application in a Registry, it gets a unique IVOA Resource 
+Identifier which then can be referred to by other applications and services. 
 
 \subsection{StandardRegExt}
 
-StandardRegExt is part of the registry standards that make discovery of VO Standards possible.  StandardRegExt refers to an encoding standard for a specialized extension of the IVOA Resource Metadata that is useful for describing a VO Standard.  By registering an IVOA Standard in a Registry, it gets a unique IVOA Resource Identifier which then can be referred to in other resource descriptions, namely for services that support the standard.
+StandardRegExt is part of the registry standards that make discovery of VO Standards possible.  
+StandardRegExt refers to an encoding standard for a specialized extension of the IVOA Resource 
+Metadata that is useful for describing a VO Standard.  By registering an IVOA Standard in a 
+Registry, it gets a unique IVOA Resource Identifier which then can be referred to in other 
+resource descriptions, namely for services that support the standard.
 
 \subsection{TAPRegExt}
 
-TAPRegExt is part of the registry standards that make discovery of VO TAP Services possible.  TAPRegExt refers to an encoding standard for a specialized extension of the IVOA Resource Metadata that is useful for describing VO Applications.  By registering a VO TAP Service in a Registry, it gets a unique IVOA Resource Identifier which then can be referred to by other applications and services.  In the context of registering TAP services, an important role filled by TAPRegExt is the communication of supported data models to the registry.
+TAPRegExt is part of the registry standards that make discovery of VO TAP Services possible.  
+TAPRegExt refers to an encoding standard for a specialized extension of the IVOA Resource Metadata 
+that is useful for describing VO Applications.  By registering a VO TAP Service in a Registry, it 
+gets a unique IVOA Resource Identifier which then can be referred to by other applications and 
+services.  In the context of registering TAP services, an important role filled by TAPRegExt is 
+the communication of supported data models to the registry.
 
 \subsection{VOEventRegExt}
 
-VOEventRegExt is a registry extension that defines a way in which the registry infrastructure of the 
-Virtual Observatory can be used to allow publication, discovery, and utilization of VOEvent 
+VOEventRegExt is a registry extension that defines a way in which the registry infrastructure 
+of the Virtual Observatory can be used to allow publication, discovery, and utilization of VOEvent
 resources. We define a new registry extension schema - VOEventRegExt - that specifies three 
 new types of resource: VOEventStream, VOEventServer and VOEventAnnotator. The stream resource 
 describes a scientifically coherent collection of events; that come from the same motivation, 
@@ -360,6 +417,8 @@ do something with it, such as a catalog lookup, and then return additional infor
 the event. 
 
 \section{Data Model Standards}
+
+TODO: Data model standards form the core for interoperable and resusable metadata and data...
 
 \begin{figure}
 \centering
@@ -569,6 +628,9 @@ metadata dictionaries are also presented.
 
 \section{Data Access Standards}
 
+TODO: The data access standards define APIs for access to metadata and data to support 
+astronomical research...
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.90\textwidth]{ivoa-arch-dal.png}
@@ -610,7 +672,6 @@ This specification also includes a VOTable-specific method of providing descript
 or more services and their input(s), usually using parameter values from elsewhere in the 
 VOTable document. Providers are able to describe services that are relevant to the records 
 (usually datasets with identifiers) by including service descriptors in a result document. 
-
 
 \subsection{SIA}
 
@@ -713,6 +774,9 @@ the production of compliant protocol implementations.
 
 \section{Resource Usage Standards}
 
+TODO: Resource usage standards define APIs for access to shared resources: computing, storage, 
+and science platforms...
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.54\textwidth]{ivoa-arch-gws.png}
@@ -748,10 +812,9 @@ The VOSpace API defines an interface to distributed storage. This specification 
 second RESTful version of the interface. It specifies how VO agents and applications can 
 use network attached data stores to persist and exchange data in a standard way. 
 
-
 \subsection{Science platforms?}
 
-
+TODO: some forward-looking text here about the motivation, plans, and promise?
 
 \bibliography{ivoatex/ivoabib}
 
