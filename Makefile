@@ -4,10 +4,10 @@
 DOCNAME = Arch
 
 # count up; you probably do not want to bother with versions <1.0
-DOCVERSION = 1.0
+DOCVERSION = 2.0
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2019-04-30
+DOCDATE = 2021-05-21
 
 # What is it you're writing: NOTE, WD, PR, or REC
 DOCTYPE = NOTE
@@ -27,7 +27,7 @@ AUX_FILES =
 
 include ivoatex/Makefile
 
-archdiag: archdiag2.svg archdiag1.svg archdiag0.svg 
+archdiag: archdiag-l2.svg archdiag-l1.svg archdiag-l0.svg 
 
 archdiag2.svg: archdiag-full.xml ivoatex/make-archdiag.xslt
 	$(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt archdiag-full.xml
