@@ -1,9 +1,9 @@
-# IVOA Architecture Endorsed Note 2019
+# IVOA Architecture Endorsed Note 2021
 
 This is the home for the IVOA Architecture Note that is produced by the Technical 
 Coordination Group (TCG). This document was created and is updated periodically to
 describe the design concepts behind existing and new IVOA standards. The original
-note was published in 2010 and this 2019 update is the first since that date.
+note was published in 2010 and this 2021 update is the first since that date.
 
 # Status
 
