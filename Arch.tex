@@ -64,7 +64,7 @@ community to access astronomical resources wherever and however they are stored 
 the astronomical data and services providers. The VO provides a technical framework 
 for the providers to enable users to discover data collections and services 
 (``Findable`) and to use them for science and public outreach (``Accessible''). To 
-enable these functionalities in perpetuity, the definition of some core astronomically-oriented 
+enable these functionalities in perpetuity, it defines some core astronomically-oriented 
 standards so data from different providers can be combined (``Interoperable'') to enable
 new scientific discoveries (``Reusable'').
 
@@ -152,10 +152,10 @@ where it fits into the IVOA architecture and its links with other IVOA standards
 (arrows) in the diagrams below indicate a ``used by'' dependency: readers wanting to 
 understand the full scope of a standard will also need to look at the other indicated 
 standards. The standards shown in blue boxes are the subject of the section; boxes in light 
-gray can be found in a different section/diagram. In some cases, green boxes are used to shown
+gray can be found in a different section/diagram. In some cases, green boxes are used to show
 external standards that provide an important or notable part of the IVOA standard. A white 
-rounded boxc around several standards indicates a group of standards that share dependencies
-(to simply the diagrams).
+rounded box around several standards indicates a group of standards that share dependencies
+(to simplify the diagrams).
 
 All IVOA standards documents are published in the IVOA Document Repository:
 
@@ -164,9 +164,9 @@ https://www.ivoa.net/documents/
 
 \section{Authentication and Authorization}
 
-The authentiation and authorization architecture is primarily an endorsement of existing
+The authentication and authorization architecture is primarily an endorsement of existing
 industry standards and technologies that suit the use cases of the IVOA community. The standards
-in this area provide some recomemndations and ``glue'' so that participants (application
+in this area provide some recommendations and ``glue'' so that participants (application
 developers, metadata and data providers, and resource providers) can easily implement interoperable
 systems.
 
@@ -179,7 +179,7 @@ systems.
 
 \subsection{SSO}
 
-The Single-Sign-On profile describes authentication mehcanisms. Approved client-server 
+The Single-Sign-On profile describes authentication mechanisms. Approved client-server 
 authentication mechanisms are described for the IVOA single-sign-on profile: No Authentication; 
 HTTP Basic Authentication; TLS with passwords; TLS with client certificates; Cookies; Open 
 Authentication; Security Assertion Markup Language; OpenID. Normative rules are given for 
@@ -216,7 +216,7 @@ TODO: The application and format standards...
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.48\textwidth]{ivoa-arch-apps.png}
-\caption{Authentication and Authorization Standards and Dependencies}
+\caption{Application and Format Standards and Dependencies}
 \label{fig:appsdeps}
 \end{figure}
 
@@ -325,7 +325,7 @@ in the VO.
 \end{figure}
 
 There are a number of standards associated with the registry to enable registration and discovery 
-of services in the Registry.  Figure X shows how various Registry standards relate to each other.
+of services in the Registry.  Figure \ref{fig:regdeps} shows how various Registry standards relate to each other.
 
 \subsection{Identifier}
 
@@ -440,7 +440,7 @@ VO-DML is a conceptual modeling language that is agnostic of serializations, or 
 representations. This allows it to be designed to fit as many purposes as possible. VO-DML 
 is directly based on UML, and can be seen as a particular representation of a UML2 Profile. 
 VO-DML is restricted to describing static data structures and from UML it only uses a subset 
-of the el ements defined in its language for describing ``Class Diagrams''. Its concepts can 
+of the elements defined in its language for describing ``Class Diagrams''. Its concepts can 
 be easily mapped to equivalent data modelling concepts in other representations such as 
 relational databases, XML schemas and object-oriented computer languages. VO-DML has a 
 representation as a simple XML dialect named VO-DML/XML that must be used to provide the 
@@ -582,7 +582,7 @@ description of the error model.  This model is a refactored subset of the origin
 
 \subsection{Transform - Draft}
 
-Th Transform Data Model covers the World Coordinate System transform component and includes 
+The Transform Data Model covers the World Coordinate System transform component and includes 
 the following concepts: the description of mathematical operations which form the building 
 blocks for conversions from one coordinate space to another, and the combination of individual 
 operations into an arbitrarily complex transform.
@@ -609,11 +609,11 @@ and a method to run queries over compliant data, using several Virtual Observato
 The data model builds on the ObsCore data model, removing elements associated with dataset 
 access that are not available during the planning phase. In this way, this standard is focused 
 on access to metadata related to the planning of a certain observatory, more than on access to 
-the scien- tific data products. Also, the data model will be focused on discovery of planned 
+the scientific data products. Also, the data model will be focused on discovery of planned 
 observations, which is very useful information for multi-wavelength coordination observations, 
 re-planning information propagation, follow-up of Targets of Opportunity alerts, preparation 
 of proposals, etc. As with ObsCore, a serialisation into a relational table is defined, which 
-allows users to run complex queries using the IVOA Table Access Proto- col. The document also 
+allows users to run complex queries using the IVOA Table Access Protocol. The document also 
 prescribes how to register and discover ObsLocTAP services. 
 
 \subsection{EPN-TAP}
