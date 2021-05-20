@@ -9,6 +9,7 @@
 \lstset{flexiblecolumns=true,basicstyle=\small,tagstyle=\ttfamily}
 \usepackage[utf8]{inputenc}
 \usepackage{todonotes}
+\usepackage{enumerate}
 \usepackage[section]{placeins}
 
 \title{IVOA Architecture}
@@ -42,7 +43,7 @@ implement the FAIR principles: Findable, Accessible, Interoperable, and Reusable
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{archdiag0.png}
+\includegraphics[width=0.9\textwidth]{archdiag0.pdf}
 \caption{IVOA Architecture Level 0}
 \label{fig:architecture0}
 \end{figure}
@@ -58,7 +59,7 @@ research teams or computer systems, interact with the User Layer.
 
 The Virtual Observatory is the necessary ``middle layer'' framework connecting the 
 Resource Layer to the User Layer in a seamless and transparent manner. Like the web 
-which enables end  users and machines to access transparently documents and services 
+which enables end  users and machines to access documents and services 
 wherever and however they are stored, the VO enables the astronomical scientific
 community to access astronomical resources wherever and however they are stored by 
 the astronomical data and services providers. The VO provides a technical framework 
@@ -87,7 +88,7 @@ Level 1 description can be used as a self-contained block.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{archdiag1.png}
+\includegraphics[width=0.9\textwidth]{archdiag1.pdf}
 \caption{IVOA Architecture Level 1}
 \label{fig:architecture1}
 \end{figure}
@@ -96,11 +97,15 @@ Astronomy produces large amounts of data of many kinds, coming from various sour
 science  space  missions, ground  based telescopes, theoretical models, compilation  
 of results, etc. These  data are usually managed by large data centres or 
 smaller teams. These providers provide the scientific community with data and
-computing services through the Internet. These resources provided can be:  
-1. data collections (images, spectra, time series, theoretical  models, catalogues, etc.)  
+computing services through the Internet. These resources provided can be:
+
+\begin{enumerate}
+\item data collections (images, spectra, time series, theoretical  models, catalogues, etc.)  
 with their associated descriptive metadata and access services.  
-2. storage services for users and for processing 
-3. computing services to process data from data collections and from users
+\item storage services for users and for processing 
+\item computing services to process data from data collections and from users
+\end{enumerate}
+
 This is the Resource Layer. 
 
 The ``consumers''  of  these data and computing services, be it individual researchers,
@@ -138,7 +143,7 @@ on (blue boxes without an outer line).
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.9\textwidth]{archdiag2.png}
+\includegraphics[width=0.9\textwidth]{archdiag2.pdf}
 \caption{IVOA Architecture Level 2}
 \label{fig:architecture2}
 \end{figure}
@@ -259,52 +264,87 @@ requirements.
 
 \section{Semantics Standards}
 
-TODO: The semantics standards provide some of the base tools for creating and curating reusable
-and interoperable metadata...
+An interoperable data infrastructure needs common languages in many
+places: From common designations of units to labels for physical
+quantities, from common names of reference frames and time scales to
+mutually understandable subject categories, from relationship types
+between VO resources (``this service publishes images from A and spectra
+fom B'') to fixed names for the messengers that produced the signals
+recorded.
+
+The VO's semantics standards provide the basis of forming such
+consensual ``vocabularies'', which are, at their root, sets of labeled
+concepts (which in turn are sets of entities clients deal with).  We
+also take care that, whereever possible, our vocabularies are
+interoperable with the rest of the semantic web by adopting the W3C's
+Resource Description Framework RDF.
+
+The vocabularies themselves are usually introduced by standards that use
+them and are then maintained on the VO's repository of
+vocabularies\footnote{\url{http://www.ivoa.net/rdf}}.  In some cases,
+however, we go beyond RDF, usually because the labels have an intrinsic
+syntax.  In these cases, the Semantics WG issues separate standards
+defining how to build and interpret these labels.  Currently, this is
+the case for unit strings and for the Unified Content Descriptors
+discussed below.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.32\textwidth]{ivoa-arch-semantics.png}
+\includegraphics[width=0.32\textwidth]{ivoa-arch-semantics.pdf}
 \caption{Semantics Standards and Dependencies}
 \label{fig:semdeps}
 \end{figure}
 \
 \subsection{Vocabularies}
 
-The vocabularies standard describes best practices related to the use of RDF-based consensus 
-vocabularies in the Virtual Observatory, that is the creation, publication, maintenance, and 
-consumption of hierarchical word lists agreed upon within the IVOA. To cover the wide range 
-of use cases envisoned, we define three flavours of such vocabularies: SKOS for informal 
-knowledge organisation on the one hand, and strict hierarchies of classes and properties on 
-the other. While the framework rests on the solid foundations of W3C RDF, provisions are made 
-to facilitate using IVOA vocabularies without specific RDF tooling. Non-normative appendices 
-detail the current vocabulary-related tooling.
+Vocabularies in the VO is a Recommendation for how to build and use
+consensus vocabularies in the Virtual Observatory.  It supports both
+``soft'' vocabularies based on the Simple Knowledge Organisation System
+SKOS and ``hard'' vocabularies based on RDF schema, where the latter
+organise their concepts in strict trees.  The ``hard'' vocabularies
+enable simple inference with relatively little effort on the side of
+the clients.  An example could be ``give me all links giving auxiliary
+data for the current dataset'' in datalink, where vocabulary-aware
+clients will also return links tagged as weight maps, errors, or noise
+estimates.
+
+This standard also details the maintenance of the VO's vocabulary
+repository, in particular as regards adding vocabularies or concepts
+within them.
 
 \subsection{VOUnits}
 
-This units standard describes a recommended syntax for writing the string representation of 
-unit labels. In addition, it describes a set of recognised and deprecated units, which is as 
-far as possible consistent with other standards (BIPM, ISO/IEC and the IAU) that are relevant 
-in the astronomical community. The intention is that units written to conform to this 
-specification will likely also be parsable by other well-known parsers. To this end, 
-we include machine-readable grammars for other units syntaxes. 
+VOUnits describes how to serialise unit strings within the Virtual
+Observatory, in particular (but by no means limited to) in the
+\xmlel{unit} attribute in VOTable.  It hence defines the atomic units,
+prefixes applicable, and the syntax of expressions using such prefixed
+atomic units. 
+
+An important design goal was consistency with other standards (BIPM,
+ISO/IEC and the IAU) that are relevant in the astronomical community.
+The intention is that units written to conform to VOUnits will likely
+also be parsable by other well-known parsers.
 
 \subsection{UCD}
 
-The Unified Content Descriptors describes the current understanding of the IVOA controlled 
-vocabulary for describing astronomical data quantities. The current document defines a 
-new standard (named UCD1+) improving the first generation of UCDs (hereafter UCD1). The 
-basic idea is to adopt a new syntax and vocabulary requiring little effort for people to 
-adapt softwares already using UCD1. This document also addresses the questions of maintenance 
-and evolution of the UCD1+. Examples of use cases within the VO, and tools for using UCD1+ 
-are also described. 
+Unified Content Descriptors are a way to denote astronomical data
+quantities.  The UCD formalism first defines a list of ``atoms'', in
+effect a controlled vocabulary with a hierarchy implied through dots
+(e.g., \ucd{pos} denotes positions, \ucd{pos.eq} equatorial positions);
+this list is currently maintained as an Endorsed Note.
 
-A separate document provides the list of controlled terms (the current vocabulary) used to 
-build Unified Content Descriptors, Version 1+ (UCD1+). 
+The atoms can then be combined into more complex labels containing
+qualifications.  For instance, \ucd{phot.mag;em.opt.V} denotes a
+magnitude in the V band, \ucd{phot.flux;em.opt.V} a flux in the same
+band.  The UCD standard defines how these compound UCDs are built, and
+the UCD list defines restrictions as to where in complete UCDs atoms can
+be used: some atoms can only be ``primary'', others are only available
+as qualifiers.  For instance, \ucd{stat.error} can only appear at the
+start of a UCD, which ensures that ``Error in redshift'' will be encoded
+as \ucd{stat.error;src.redshift} rather than the other way round.
 
-\subsection{Current Vocabularies}
-
-TODO: list current vocabulary URLs here?
+The UCD ecosystem is completed by another standard on how new atoms are
+adopted to the list of UCDs.
 
 \section{Registry Standards}
 
@@ -319,7 +359,7 @@ in the VO.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.70\textwidth]{ivoa-arch-registry.png}
+\includegraphics[width=0.70\textwidth]{ivoa-arch-registry.pdf}
 \caption{Registry Standards and Dependencies}
 \label{fig:regdeps}
 \end{figure}

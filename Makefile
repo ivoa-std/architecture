@@ -17,7 +17,7 @@ DOCTYPE = NOTE
 SOURCES = $(DOCNAME).tex
 
 # List of pixel image files to be included in submitted package 
-FIGURES = archdiag0.png archdiag1.png archdiag2.png
+FIGURES = archdiag0.pdf archdiag1.pdf archdiag2.pdf
 
 # List of PDF figures (for vector graphics)
 VECTORFIGURES = 
@@ -27,13 +27,18 @@ AUX_FILES =
 
 include ivoatex/Makefile
 
-archdiag: archdiag-l2.svg archdiag-l1.svg archdiag-l0.svg 
-
 archdiag2.svg: archdiag-full.xml ivoatex/make-archdiag.xslt
 	$(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt archdiag-full.xml
 
 archdiag1.svg: ivoatex/make-archdiag.xslt
 	echo '<archdiag xmlns="http://ivoa.net/archdiag"/>' | $(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt - 
+
 archdiag0.svg: ivoatex/make-archdiag.xslt
 	echo '<archdiag0 xmlns="http://ivoa.net/archdiag"/>' | $(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt -
 
+
+
+ivoatex/Makefile:
+	@echo "*** ivoatex submodule not found.  Initialising submodules."
+	@echo
+	git submodule update --init
