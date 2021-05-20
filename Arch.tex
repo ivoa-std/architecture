@@ -696,6 +696,20 @@ or more services and their input(s), usually using parameter values from elsewhe
 VOTable document. Providers are able to describe services that are relevant to the records 
 (usually datasets with identifiers) by including service descriptors in a result document. 
 
+\subsection{ObjVisSAP - Draft}
+
+The Object Visibility Simple Access Protocol (ObjVisSAP) is an IVOA Data Access protocol 
+which defines the standard for retrieving object constraint-free visibility time intervals 
+through a uniform interface within the VO framework for given object coordinates to be 
+observed by a given Astronomical Observatory. The ObjVisSAP interface is meant to be 
+reasonably simple to be implemented by service providers. A basic query will be done 
+introducing a set of sky coordinates and a given time period (optional). The service 
+returns a list of constraint-free visibility time intervals formatted as VOTable. Thus, 
+an implementation of the service may support additional search parameters (some of which 
+may be custom to that particular service) to more finely control the selection of the 
+visibility periods. The specification also describes how the search on extra parameters 
+has to be done.
+
 \subsection{SIA}
 
 The Simple Image Access protocol provides capabilities for the discovery, description, 
