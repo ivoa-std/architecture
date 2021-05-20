@@ -138,8 +138,8 @@ VO applications (``Using'').
 
 Level 2 of the IVOA Architecture is similar to the Level 1, but adds all the IVOA 
 standards in  their corresponding layer. Some  standards  have  already  been  approved 
-and recommended (blue boxes with an outer line) while others are still being worked 
-on (blue boxes without an outer line).
+and recommended (blue boxes with an outer line) while others are still a work in progress
+(blue boxes without an outer line).
 
 \begin{figure}[h]
 \centering
@@ -152,15 +152,18 @@ Note that this list  (and standard status) will naturally evolve with time. Driv
 science use cases and impelmentation experience, existing standards will be updated and
 new standards will be identified and added to that Fig.~\ref{fig:architecture2}. 
 
-The following sections provide a summary description of each current standard, including 
-where it fits into the IVOA architecture and its links with other IVOA standards. The links 
+The following sections of this document provide a summary description of each current standard, 
+including a description of where it fits in the overall IVOA architecture along with links with 
+other IVOA standards. The links 
 (arrows) in the diagrams below indicate a ``used by'' dependency: readers wanting to 
-understand the full scope of a standard will also need to look at the other indicated 
-standards. The standards shown in blue boxes are the subject of the section; boxes in light 
-gray can be found in a different section/diagram. In some cases, green boxes are used to show
-external standards that provide an important or notable part of the IVOA standard. A white 
-rounded box around several standards indicates a group of standards that share dependencies
-(to simplify the diagrams).
+understand the full scope of a standard will also need to review the other standards 
+represented in each box of the diagrams. 
+The standards shown in blue boxes are the subject of the section; 
+boxes in light gray can be found in a different section/diagram. 
+In some cases, green boxes are used to show external standards that provide an 
+important or notable part of the IVOA standard. 
+A white rounded box around several standards indicates a group of standards that share 
+dependencies (to simplify the diagrams).
 
 All IVOA standards documents are published in the IVOA Document Repository:
 
@@ -169,7 +172,10 @@ https://www.ivoa.net/documents/
 
 \section{Authentication and Authorization}
 
-The authentication and authorization architecture is primarily an endorsement of existing
+Authentication is a process by which you verify that someone is who they claim they 
+are. Authorization is the process of establishing if the user (who is already authenticated), 
+is permitted to have access to a resource. The authentication and authorization architecture 
+is primarily an endorsement of existing
 industry standards and technologies that suit the use cases of the IVOA community. The standards
 in this area provide some recommendations and ``glue'' so that participants (application
 developers, metadata and data providers, and resource providers) can easily implement interoperable
@@ -177,7 +183,7 @@ systems.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.28\textwidth]{ivoa-arch-auth.png}
+\includegraphics[width=0.28\textwidth]{ivoa-arch-auth.pdf}
 \caption{Authentication and Authorization Standards and Dependencies}
 \label{fig:authdeps}
 \end{figure}
@@ -196,7 +202,7 @@ The credential delegation protocol allows a client program to delegate a user's 
 to a service such that that service may make requests of other services in the name of that 
 user. The protocol defines a REST service that works alongside other IVO services to enable 
 such a delegation in a secure manner. In addition to defining the specifics of the service 
-protocol, this document describes how a delegation service is registered in an IVOA registry 
+protocol, the standard document describes how a delegation service is registered in an IVOA registry 
 along with the services it supports. The specification also explains how one can determine 
 from a service registration that it requires the use of a supporting delegation service. 
 
@@ -216,11 +222,18 @@ scalable mechanism for sharing proprietary assets with a potentially dynamic set
 
 \section{Application and Format Standards}
 
-TODO: The application and format standards...
+Application and Format Standards are focused on standards that support data formats and 
+protocols that enable astronomy software tools to interoperate and communicate. IVOA 
+members have recognised that building a monolithic tool that attempts to fulfil all the 
+requirements of all users is impractical, and it is a better use of our limited resources 
+to enable individual tools to work together better. One element of this is defining 
+common file formats for the exchange of data between different applications. Another 
+important component is a messaging system that enables the applications to share data 
+and take advantage of each other's functionality.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.48\textwidth]{ivoa-arch-apps.png}
+\includegraphics[width=0.48\textwidth]{ivoa-arch-apps.pdf}
 \caption{Application and Format Standards and Dependencies}
 \label{fig:appsdeps}
 \end{figure}
@@ -252,15 +265,10 @@ was designed to be close to the FITS Binary Table format.
 
 \subsection{SAMP}
 
-The Simple Application Messaging Protocol is a messaging protocol that enables astronomy software 
-tools to interoperate and communicate. IVOA members have recognised that building a monolithic tool 
-that attempts to fulfil all the requirements of all users is impractical, and it is a better use 
-of our limited resources to enable individual tools to work together better. One element of this 
-is defining common file formats for the exchange of data between different applications. Another 
-important component is a messaging system that enables the applications to share data and take 
-advantage of each other's functionality. SAMP supports communication between applications on the 
-desktop and in web browsers, and is also intended to form a framework for more general messaging 
-requirements. 
+The Simple Application Messaging Protocol is a messaging protocol that enables astronomy 
+software tools to interoperate and communicate. SAMP supports communication between 
+applications on the desktop and in web browsers, and is also intended to form a framework 
+for more general messaging requirements. 
 
 \section{Semantics Standards}
 
@@ -431,30 +439,13 @@ gets a unique IVOA Resource Identifier which then can be referred to by other ap
 services.  In the context of registering TAP services, an important role filled by TAPRegExt is 
 the communication of supported data models to the registry.
 
-\subsection{VOEventRegExt}
-
-VOEventRegExt is a registry extension that defines a way in which the registry infrastructure 
-of the Virtual Observatory can be used to allow publication, discovery, and utilization of VOEvent
-resources. We define a new registry extension schema - VOEventRegExt - that specifies three 
-new types of resource: VOEventStream, VOEventServer and VOEventAnnotator. The stream resource 
-describes a scientifically coherent collection of events; that come from the same motivation, 
-team, project, or experiment; each event of a stream uses the same vocabulary (parameters) to 
-describe events; while the primary thrust of the VOEvent work is responding to future events, 
-a stream can also describe events that have already happened. The server resource describes 
-which computers and interfaces can be used to receive future events from (subscription capability), 
-run queries on past events (query capability), and disseminate events (publish capability); 
-it is described by the streams that it knows, and then by the capabilities it offers for each 
-of those streams. Finally the annotator resource describes services which receive an event, 
-do something with it, such as a catalog lookup, and then return additional information about 
-the event. 
-
 \section{Data Model Standards}
 
 TODO: Data model standards form the core for interoperable and resusable metadata and data...
 
 \begin{figure}
 \centering
-\includegraphics[width=0.62\textwidth]{ivoa-arch-dm.png}
+\includegraphics[width=0.62\textwidth]{ivoa-arch-dm.pdf}
 \caption{Data Model Standards and Dependencies}
 \label{fig:dmdeps}
 \end{figure}
@@ -665,7 +656,7 @@ astronomical research...
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.90\textwidth]{ivoa-arch-dal.png}
+\includegraphics[width=0.90\textwidth]{ivoa-arch-dal.pdf}
 \caption{Data Access Standards and Dependencies}
 \label{fig:daldeps}
 \end{figure}
@@ -811,7 +802,7 @@ and science platforms...
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.54\textwidth]{ivoa-arch-gws.png}
+\includegraphics[width=0.54\textwidth]{ivoa-arch-gws.pdf}
 \caption{Authentication and Authorization Standards and Dependencies}
 \label{fig:gwsdeps}
 \end{figure}
