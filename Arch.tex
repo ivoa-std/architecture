@@ -651,8 +651,28 @@ metadata dictionaries are also presented.
 
 \section{Data Access Standards}
 
-TODO: The data access standards define APIs for access to metadata and data to support 
-astronomical research...
+The data access standards define API for querying and accessing data holdings.
+These standards are primarily implemented by data providers so that the community 
+can use agreed and shared tools to interact with the data holdings.
+
+As it is visible from Fig.~\ref{fig:daldeps} interconnection of data
+access standards is, currently, quite complicated, even without taking
+into account general VO landscape dependencies. This depends on two main
+factors: standards not yet updated to rely on DALI (Sec.~\ref{dal:dali})
+and \textit{simple access} (parametric query solutions) with respect to
+\textit{relational tableset based} (supported through TAP, Sec.~\ref{dal:tap}) 
+protocols.
+
+Besides that, some specific cases and standards complete or support the
+data access solutions:
+\begin{itemize}
+	\item ADQL: a SQL-based language to bring astrophysics specific
+solutions in querying relational databases;
+	\item VTP: a specific transport protocol to broadcast VOEvent
+messages;
+	\item SimDAL: a dedicated access protocol, using SimDM structure and
+concepts to allow access to simulated data collections.
+\end{itemize}
 
 \begin{figure}[h]
 \centering
@@ -660,6 +680,10 @@ astronomical research...
 \caption{Data Access Standards and Dependencies}
 \label{fig:daldeps}
 \end{figure}
+
+Here follow brief descriptions of the access layer's standards, roughly
+order as: baseline standards, datasets/records discovery, data access
+solutions, peculiar standards.
 
 \subsection{ADQL}
 
@@ -676,6 +700,7 @@ angular distance, defining a cone on the sky. The response returns a list of ast
 sources from the catalog whose positions lie within the cone, formatted as a VOTable. 
 
 \subsection{DALI}
+\label{dal:dali}
 
 The Data Access Layer Interface defines the base web service interfaces common to all Data 
 Access Layer (DAL) services. This standard defines the behaviour of common resources, the 
@@ -789,6 +814,7 @@ file using astronomical coordinates; Future evolution is expected to include per
 various kinds of operations: transformations, pixel operations, and applying functions to the data.
 
 \subsection{TAP}
+\label{dal:tap}
 
 The Table Access Protocol defines a service protocol for accessing general table data, 
 including astronomical catalogs as well as general database tables. Access is provided 
