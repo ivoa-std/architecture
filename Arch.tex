@@ -149,7 +149,7 @@ and recommended (blue boxes with an outer line) while others are still a work in
 \end{figure}
 
 Note that this list  (and standard status) will naturally evolve with time. Driven by
-science use cases and impelmentation experience, existing standards will be updated and
+science use cases and implementation experience, existing standards will be updated and
 new standards will be identified and added to that Fig.~\ref{fig:architecture2}. 
 
 The following sections of this document provide a summary description of each current standard, 
@@ -260,8 +260,8 @@ The VOTable \citep{2019ivoa.spec.1021O} format is an XML standard for the interc
 In this context, a table is an unordered set of rows, each of a uniform structure, as specified 
 in the table description (the table metadata). Each row in a table is a sequence of table cells, 
 and each of these contains either a primitive data type, or an array of such primitives. VOTable 
-is derived from the Astrores format [1], itself modeled on the FITS Table format [2]; VOTable 
-was designed to be close to the FITS Binary Table format. 
+is derived from the Astrores format \citep{astrores}, itself modeled on the FITS Table format 
+\citep{std:FITS}; VOTable was designed to be close to the FITS Binary Table format. 
 
 \subsection{SAMP}
 
@@ -662,8 +662,28 @@ metadata dictionaries are also presented.
 
 \section{Data Access Standards}
 
-TODO: The data access standards define APIs for access to metadata and data to support 
-astronomical research...
+The data access standards define API for querying and accessing data holdings.
+These standards are primarily implemented by data providers so that the community 
+can use agreed and shared tools to interact with the data holdings.
+
+As it is visible from Fig.~\ref{fig:daldeps} interconnection of data
+access standards is, currently, quite complicated, even without taking
+into account general VO landscape dependencies. This depends on two main
+factors: standards not yet updated to rely on DALI (Sec.~\ref{dal:dali})
+and \textit{simple access} (parametric query solutions) with respect to
+\textit{relational tableset based} (supported through TAP, Sec.~\ref{dal:tap}) 
+protocols.
+
+Besides that, some specific cases and standards complete or support the
+data access solutions:
+\begin{itemize}
+	\item ADQL: a SQL-based language to bring astrophysics specific
+solutions in querying relational databases;
+	\item VTP: a specific transport protocol to broadcast VOEvent
+messages;
+	\item SimDAL: a dedicated access protocol, using SimDM structure and
+concepts to allow access to simulated data collections.
+\end{itemize}
 
 \begin{figure}[h]
 \centering
@@ -671,6 +691,10 @@ astronomical research...
 \caption{Data Access Standards and Dependencies}
 \label{fig:daldeps}
 \end{figure}
+
+Here follow brief descriptions of the access layer's standards, roughly
+order as: baseline standards, datasets/records discovery, data access
+solutions, peculiar standards.
 
 \subsection{ADQL}
 
@@ -687,6 +711,7 @@ angular distance, defining a cone on the sky. The response returns a list of ast
 sources from the catalog whose positions lie within the cone, formatted as a VOTable. 
 
 \subsection{DALI}
+\label{dal:dali}
 
 The Data Access Layer Interface (DALI) \citep{2017ivoa.spec.0517D} defines the base web service interfaces common to all Data 
 Access Layer (DAL) services. This standard defines the behaviour of common resources, the 
@@ -800,6 +825,7 @@ file using astronomical coordinates; Future evolution is expected to include per
 various kinds of operations: transformations, pixel operations, and applying functions to the data.
 
 \subsection{TAP}
+\label{dal:tap}
 
 The Table Access Protocol (TAP) \citep{2019ivoa.spec.0927D} defines a service protocol for accessing general table data, 
 including astronomical catalogs as well as general database tables. Access is provided 
@@ -860,6 +886,6 @@ The VOSpace \citep{2018ivoa.spec.0621G} API defines an interface to distributed 
 second RESTful version of the interface. It specifies how VO agents and applications can 
 use network attached data stores to persist and exchange data in a standard way. 
 
-\bibliography{ivoatex/ivoabib,ivoatex/docrepo}
+\bibliography{ivoatex/ivoabib,ivoatex/docrepo.localrefs}
 
 \end{document}
