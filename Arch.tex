@@ -190,7 +190,7 @@ systems.
 
 \subsection{SSO}
 
-The Single-Sign-On profile describes authentication mechanisms. Approved client-server 
+The Single-Sign-On (SSO) \citep{2017ivoa.spec.0524T} profile describes authentication mechanisms. Approved client-server 
 authentication mechanisms are described for the IVOA single-sign-on profile: No Authentication; 
 HTTP Basic Authentication; TLS with passwords; TLS with client certificates; Cookies; Open 
 Authentication; Security Assertion Markup Language; OpenID. Normative rules are given for 
@@ -198,7 +198,7 @@ the implementation of these mechanisms, mainly by reference to pre-existing stan
 
 \subsection{CDP}
 
-The credential delegation protocol allows a client program to delegate a user's credentials 
+The Credential Delegation Protocol (CDP) \citep{2010ivoa.spec.0218P} allows a client program to delegate a user's credentials 
 to a service such that that service may make requests of other services in the name of that 
 user. The protocol defines a REST service that works alongside other IVO services to enable 
 such a delegation in a secure manner. In addition to defining the specifics of the service 
@@ -206,9 +206,9 @@ protocol, the standard document describes how a delegation service is registered
 along with the services it supports. The specification also explains how one can determine 
 from a service registration that it requires the use of a supporting delegation service. 
 
-\subsection{GMS}
+\subsection{GMS - Draft}
 
-The Group Membership Service (GMS) specification describes a service interface for determining 
+The Group Membership Service (GMS, WD) specification describes a service interface for determining 
 whether a user is a member of a group. Membership information can be used to protect access to 
 proprietary resources. When an authorization decision is needed (whether to grant or deny access 
 to a proprietary resource), a call to GMS can be made to see if the requesting user is a member 
@@ -240,7 +240,7 @@ and take advantage of each other's functionality.
 
 \subsection{HiPS}
 
-Hierarchical Progressive Survey is a hierarchical scheme for the description, storage and 
+Hierarchical Progressive Survey (HiPS) \citep{2017ivoa.spec.0519F} is a hierarchical scheme for the description, storage and 
 access of sky survey data. The system is based on hierarchical tiling of sky regions at 
 finer and finer spatial resolution which facilitates a progressive view of a survey, and 
 supports multi-resolution zooming and panning. HiPS uses the HEALPix tessellation of the 
@@ -249,14 +249,14 @@ indexing scheme that leads to practical implementations.
 
 \subsection{MOC}
 
-The Multi-Order Coverage map is a method to specify coverage as an arbitrary sky regions. 
+The Multi-Order Coverage Map (MOC) \citep{2019ivoa.spec.1007F} is a method to specify coverage as an arbitrary sky regions. 
 The goal is to be able to provide a very fast comparison mechanism between coverage maps. 
 The mechanism is based on the HEALPix sky tessellation algorithm. It is essentially a 
 simple way to map regions of the sky into hierarchically grouped predefined cells. 
 
 \subsection{VOTable} 
 
-The VOTable format is an XML standard for the interchange of data represented as a set of tables. 
+The VOTable \citep{2019ivoa.spec.1021O} format is an XML standard for the interchange of data represented as a set of tables. 
 In this context, a table is an unordered set of rows, each of a uniform structure, as specified 
 in the table description (the table metadata). Each row in a table is a sequence of table cells, 
 and each of these contains either a primitive data type, or an array of such primitives. VOTable 
@@ -265,7 +265,7 @@ was designed to be close to the FITS Binary Table format.
 
 \subsection{SAMP}
 
-The Simple Application Messaging Protocol is a messaging protocol that enables astronomy 
+The Simple Application Messaging Protocol (SAMP) \citep{2009ivoa.spec.0421B} is a messaging protocol that enables astronomy 
 software tools to interoperate and communicate. SAMP supports communication between 
 applications on the desktop and in web browsers, and is also intended to form a framework 
 for more general messaging requirements. 
@@ -322,7 +322,7 @@ within them.
 
 \subsection{VOUnits}
 
-VOUnits describes how to serialise unit strings within the Virtual
+VOUnits \citep{2014ivoa.spec.0523D} describes how to serialise unit strings within the Virtual
 Observatory, in particular (but by no means limited to) in the
 \xmlel{unit} attribute in VOTable.  It hence defines the atomic units,
 prefixes applicable, and the syntax of expressions using such prefixed
@@ -335,7 +335,7 @@ also be parsable by other well-known parsers.
 
 \subsection{UCD}
 
-Unified Content Descriptors are a way to denote astronomical data
+Unified Content Descriptors (UCD) citep{2019ivoa.spec.1007G} are a way to denote astronomical data
 quantities.  The UCD formalism first defines a list of ``atoms'', in
 effect a controlled vocabulary with a hierarchy implied through dots
 (e.g., \ucd{pos} denotes positions, \ucd{pos.eq} equatorial positions);
@@ -377,7 +377,7 @@ of services in the Registry.  Figure \ref{fig:regdeps} shows how various Registr
 
 \subsection{Identifier}
 
-An IVOA Resource Identifier (or IVOA identifier or IVOA ID for short) is a globally unique reference 
+An IVOA Resource Identifier (or IVOA identifier or IVOA ID for short) \citep{2016ivoa.spec.0523D} is a globally unique reference 
 to a resource represented in a compact, ASCII-text format.  An IVOA identifier MUST always refer to 
 a resource that has been registered with an IVOA-compliant registry; that is, it should be possible 
 to use the ID to get a description of the resource from a compliant registry somewhere in the VO 
@@ -385,7 +385,7 @@ environment.
 
 \subsection{VOResource}
 
-VOResource describes an encoding standard for IVOA Resource Metadata. The primary intended use of 
+VOResource \citep{2018ivoa.spec.0625P} describes an encoding standard for IVOA Resource Metadata. The primary intended use of 
 VOResource is to provide an XML interchange format for use with resource registries. A registry is 
 a repository of resource descriptions and is employed by users and applications to discover resources. 
 VOResource can be used to pass descriptions from publishers to registries and then from registries to 
@@ -393,14 +393,14 @@ applications. Another intended use is as a language for services to describe the
 
 \subsection{VODataService}
 
-The VODataService standard makes discovery possible.  It is an encoding standard that enables one to 
+The VODataService \citep{2010ivoa.spec.1202P} standard makes discovery possible.  It is an encoding standard that enables one to 
 describe how the data underlying the resource covers the sky as well as their frequency and time. 
 VODataService also enables detailed descriptions of tables that include information useful to the 
 discovery of tabular data. 
 
 \subsection{Registry Interface}
 
-The Registry Interface defines the interfaces that support interactions between applications and 
+The Registry Interface \citep{2018ivoa.spec.0723D} defines the interfaces that support interactions between applications and 
 registries as well as between the registries themselves.  It is based on a general, distributed 
 model composed of searchable and publishing registries. The specification has two main components: 
 (a) an interface for searching and (b) an interface for harvesting.  Finally, Registry Interface 
@@ -409,14 +409,25 @@ VOResource metadata schema.
 
 \subsection{Resource Metadata}
 
-The Resource Metadata standard represents the essential capability to describe what data and 
+The Resource Metadata \citep{2007ivoa.spec.0302H} standard represents the essential capability to describe what data and 
 computational facilities are available where, and once identified, how to use them.  The data 
 themselves have associated metadata (e.g., FITS keywords), and similarly we require metadata 
 about data collections and data services so that VO users can easily find information of interest.  
 
+\subsection{RegTAP}
+
+The Registry Relational Schema for Table Access Protocol (RegTAP) \citep{2019ivoa.spec.1011D} provides a mechanism 
+with which VO applications can discover and select resources - first and foremost data and services 
+- that are relevant for a particular scientific problem. This specification defines an interface 
+for searching this resource metadata based on the IVOA's TAP protocol. It specifies a set of tables 
+that comprise a useful subset of the information contained in the registry records, as well as the 
+table's data content in terms of the XML VOResource data model. The general design of the system 
+is geared towards allowing easy authoring of queries. 
+
 \subsection{SimpleDALRegExt}
 
-SimpleDALRegExt is part of the registry standards that make discovery of Simple DAL services 
+Describing Simple Data Access Services (SimpleDALRegExt) \citep{2017ivoa.spec.0530P} 
+is part of the registry standards that make discovery of Simple DAL services 
 possible (e.g., SIAP, SCS, SSAP, SLAP).  SimpleDALRegExt refers to an encoding standard for a 
 specialized extension of the IVOA Resource Metadata that is useful for describing VO Simple DAL 
 Services.  By registering a VO Application in a Registry, it gets a unique IVOA Resource 
@@ -424,7 +435,7 @@ Identifier which then can be referred to by other applications and services.
 
 \subsection{StandardsRegExt}
 
-StandardsRegExt is part of the registry standards that make discovery of VO Standards possible.  
+The Standards registry extension (StandardsRegExt) \citep{2012ivoa.spec.0508H} is part of the registry standards that make discovery of VO Standards possible.  
 StandardsRegExt refers to an encoding standard for a specialized extension of the IVOA Resource 
 Metadata that is useful for describing a VO Standard.  By registering an IVOA Standard in a 
 Registry, it gets a unique IVOA Resource Identifier which then can be referred to in other 
@@ -432,7 +443,7 @@ resource descriptions, namely for services that support the standard.
 
 \subsection{TAPRegExt}
 
-TAPRegExt is part of the registry standards that make discovery of VO TAP Services possible.  
+The Table Access Protocol registry extension (TAPRegExt) \citep{2012ivoa.spec.0827D} is part of the registry standards that make discovery of VO TAP Services possible.  
 TAPRegExt refers to an encoding standard for a specialized extension of the IVOA Resource Metadata 
 that is useful for describing VO Applications.  By registering a VO TAP Service in a Registry, it 
 gets a unique IVOA Resource Identifier which then can be referred to by other applications and 
@@ -452,7 +463,7 @@ TODO: Data model standards form the core for interoperable and resusable metadat
 
 \subsection{VO-DML}
 
-The VO Data Modelling Language defines a standard modelling language, or meta-model, for 
+The VO Data Modelling Language (VO-DML) \citep{2018ivoa.spec.0910L} defines a standard modelling language, or meta-model, for 
 expressing data models in the IVOA. Adopting such a uniform language for all models allows 
 these to be used in a homogeneous manner and allows a consistent definition of reuse of one 
 model by another. The particular language defined here includes a consistent identification 
@@ -477,7 +488,7 @@ IVOA standards context.
 
 \subsection{CharDM} 
 
-The Characterisation Data Model defines the high level metadata necessary to describe the 
+The Characterisation Data Model (CharDM) \citep{2008ivoa.spec.0325L} defines the high level metadata necessary to describe the 
 physical parameter space of observed or simulated astronomical data sets, such as 2D-images, 
 data cubes, X-ray event lists, and IFU data. This model is an abstraction which can be used 
 to derive a structured description of any relevant data and thus to facilitate its discovery 
@@ -489,7 +500,7 @@ independent of instrumental signatures as far as possible.
 
 \subsection{ObsCoreDM}
 
-The Observation Core Data Model specifies the metadata that are necessary to perform data 
+The Observation Data Model Core Components (ObsCoreDM) \citep{2017ivoa.spec.0509L} specifies the metadata that are necessary to perform data 
 discovery when querying data centers for astronomical observations of interest. It exposes 
 use-cases to be carried out, explains the model and provides guidelines for its implementation 
 as a data access service based on the Table Access Protocol (TAP). It aims at providing a 
@@ -511,15 +522,15 @@ dedicated to global discovery.
 
 \subsection{PhotDM}
 
-The Photometry Data Model describes photometry filters, photometric systems, magnitude 
+The Photometry Data Model (PhotDM) \citep{2013ivoa.spec.1005S} describes photometry filters, photometric systems, magnitude 
 systems, zero points and its interrelation with the other IVOA data models through a 
 simple data model. Particular attention is given necessarily to optical photometry where 
 specifications of magnitude systems and photometric zero points are required to convert 
 photometric measurements into physical flux density units.
 
-\subsection{ProvDM}
+\subsection{ProvenanceDM}
 
-The Provenance Data Model describes how provenance information can be modeled, stored 
+The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modeled, stored 
 and exchanged within the astronomical community in a standardized way. We follow the 
 definition of provenance as proposed by the W3C, i.e. that ``provenance is information 
 about entities, activities, and people involved in producing a piece of data or thing, 
@@ -533,7 +544,7 @@ usefulness of the dataset, document or device for her own scientific work.
 
 \subsection{SimDM}
 
-The Simulation Data Model describes numerical computer simulations of astrophysical systems. 
+The Simulation Data Model (SimDM) \citep{2012ivoa.spec.0503L} describes numerical computer simulations of astrophysical systems. 
 The primary goal of this standard is to support discovery of simulations by describing those 
 aspects of them that scientists might wish to query on, i.e. it is a model for meta-data 
 describing simulations. This document does not propose a protocol for using this model. 
@@ -542,7 +553,7 @@ form or in a form derived from the model proposed here, but more suited to the p
 
 \subsection{SSLDM}
 
-The Simple Spectral Lines Data Model describes spectral line transitions. The main objective of 
+The Simple Spectral Lines Data Model (SSLDM) \citep{2010ivoa.spec.1209O} describes spectral line transitions. The main objective of 
 the model is to integrate with and support the Simple Line Access Protocol, with which it forms 
 a compact unit. This integration allows seamless access to Spectral Line Transitions available 
 worldwide in the VO context. This model does not provide a complete description of Atomic and 
@@ -553,14 +564,14 @@ necessary information to describe lines appearing in astrophysical contexts.
 
 \subsection{SpectralDM}
 
-The Spectral Data Model describes the structure of spectrophotometric datasets with spectral and 
+The Spectral Data Model \citep{2007ivoa.spec.1029M} describes the structure of spectrophotometric datasets with spectral and 
 temporal coordinates and associated metadata. This data model may be used to represent spectra, 
 time series data, segments of SED (Spectral Energy Distributions) and other spectral or temporal 
 associations. 
 
 \subsection{VOEvent} 
 
-The VOEvent model defines the content and meaning of a standard information packet for 
+The VOEvent model \citep{2006ivoa.spec.1101S} defines the content and meaning of a standard information packet for 
 representing, transmitting, publishing and archiving information about a transient celestial 
 event, with the implication that timely follow-up is of interest. The objective is to motivate 
 the observation of targets-of-opportunity, to drive robotic telescopes, to trigger archive 
@@ -582,7 +593,7 @@ registry of events, who can subscribe to a particular registry, nor the intellec
 
 \subsection{STC}
 
-The Space-Time Coordinate (STC) metadata for the Virtual Observatory describes the coordinate 
+The Space-Time Coordinate (STC) \citep{2007ivoa.spec.1030R} metadata for the Virtual Observatory describes the coordinate 
 axes of astronomical data. It details the various components, highlights some implementation 
 considerations, presents a complete set of UML diagrams, and discusses the relation between 
 STC and certain other parts of the Data Model. Two serializations are discussed: XML (STC-X) and
@@ -590,7 +601,7 @@ ascii string (STC-S); the former is an integral part of the model.
 
 \subsection{Coords}
 
-The Coordinates Data Model covers the following concepts: description of single and multi-dimensional 
+The Coordinates Data Model (PR) covers the following concepts: description of single and multi-dimensional 
 coordinate space and coordinates within that space, cordinate frames providing metadata describing the 
 origin and orientation of the coordinate space, the definition of simple domain-specific coordinate
 types for the most common use cases, and description of the coordinate systems domain space. This
@@ -598,21 +609,21 @@ model is a refactored subset of the original STC data model.
 
 \subsection{Meas}
 
-The Measurements Data Model covers the description of measured or determined astronomical data 
+The Measurements Data Model (PR) covers the description of measured or determined astronomical data 
 to enable the association of the determined ``value'' with corresponding errors. In this model, 
 the ``value'' is given by the various coordinate types of the coordinates data model plus a 
 description of the error model.  This model is a refactored subset of the original STC data model.
 
 \subsection{Transform - Draft}
 
-The Transform Data Model covers the World Coordinate System transform component and includes 
+The Transform Data Model (WD) covers the World Coordinate System transform component and includes 
 the following concepts: the description of mathematical operations which form the building 
 blocks for conversions from one coordinate space to another, and the combination of individual 
 operations into an arbitrarily complex transform.
  
 \subsection{DatasetDM - Draft}
 
-The Dataset Data Model provides a data model describing the structure and content of generic 
+The Dataset Data Model (WD) provides a data model describing the structure and content of generic 
 Dataset metadata for the IVOA. This is a high-level model which is to be referenced and 
 extended by other models describing specific types of Datasets and Data products. In 
 this document, we specify the generic Dataset, as well as an ObservationDataset model 
@@ -622,12 +633,12 @@ a hypothetical Observation-Experiment model to serve as a placeholder.
 
 \subsection{CubeDM - Draft}
 
-This Cube Data Model presents an abstracted representation of N-Dimensional cube datasets and 
+This Cube Data Model (WD) presents an abstracted representation of N-Dimensional cube datasets and 
 serves as a framework on which to construct models for more specialized Astronomical datasets. 
 
 \subsection{ObsLocTAP} 
 
-The Observation Locator Table Access Protocol defines a data model for scheduled observations 
+The Observation Locator Table Access Protocol (ObsLocTAP, PR) defines a data model for scheduled observations 
 and a method to run queries over compliant data, using several Virtual Observatory technologies.
 The data model builds on the ObsCore data model, removing elements associated with dataset 
 access that are not available during the planning phase. In this way, this standard is focused 
@@ -641,7 +652,7 @@ prescribes how to register and discover ObsLocTAP services.
 
 \subsection{EPN-TAP}
 
-The EPN-TAP framework describes use of TAP with the EPNcore metadata dictionary. The EPNcore 
+The Euro Planetary Networt TAP (EPN-TAP, PR) framework describes use of TAP with the EPNcore metadata dictionary. The EPNcore 
 metadata dictionary defines the core components that are necessary to perform data discovery 
 in the Solar System related science fields. It includes keywords to describe data products 
 coverage (temporal, spectral, spatial, photometric), origin (instrument, facility), content 
@@ -663,21 +674,21 @@ astronomical research...
 
 \subsection{ADQL}
 
-The Astronomical Data Query Language has been developed based on SQL92. This document 
+The Astronomical Data Query Language (ADQL) \citep{2008ivoa.spec.1030O} has been developed based on SQL92. This document 
 describes the subset of the SQL grammar supported by ADQL. Special restrictions and 
 extensions to SQL92 have been defined in order to support generic and astronomy 
 specific operations. 
 
 \subsection{ConeSearch}
 
-The (Simple) Cone Search API specification defines a simple query protocol for retrieving 
+The (simple) Cone Search \citep{2008ivoa.specQ0222P} API specification defines a simple query protocol for retrieving 
 records from a catalog of astronomical sources. The query describes sky position and an 
 angular distance, defining a cone on the sky. The response returns a list of astronomical 
 sources from the catalog whose positions lie within the cone, formatted as a VOTable. 
 
 \subsection{DALI}
 
-The Data Access Layer Interface defines the base web service interfaces common to all Data 
+The Data Access Layer Interface (DALI) \citep{2017ivoa.spec.0517D} defines the base web service interfaces common to all Data 
 Access Layer (DAL) services. This standard defines the behaviour of common resources, the 
 meaning and use of common parameters, success and error responses, and DAL service 
 registration. The goal of this specification is to define the common elements that are 
@@ -687,7 +698,7 @@ libraries to be written and widely adopted.
 
 \subsection{DataLink}
 
-Th DataLink API specification describes the linking of data discovery metadata to access to 
+The DataLink \citep{2015ivoa.spec.0617D} API specification describes the linking of data discovery metadata to access to 
 the data itself, further detailed metadata, related resources, and to services that perform 
 operations on the data. The web service capability supports a drill-down into the details 
 of a specific dataset and provides a set of links to the dataset file(s) and related resources. 
@@ -698,7 +709,7 @@ VOTable document. Providers are able to describe services that are relevant to t
 
 \subsection{ObjVisSAP - Draft}
 
-The Object Visibility Simple Access Protocol (ObjVisSAP) is an IVOA Data Access protocol 
+The Object Visibility Simple Access Protocol (ObjVisSAP, WD) is an IVOA Data Access protocol 
 which defines the standard for retrieving object constraint-free visibility time intervals 
 through a uniform interface within the VO framework for given object coordinates to be 
 observed by a given Astronomical Observatory. The ObjVisSAP interface is meant to be 
@@ -712,7 +723,7 @@ has to be done.
 
 \subsection{SIA}
 
-The Simple Image Access protocol provides capabilities for the discovery, description, 
+The Simple Image Access (SIA) \citep{2015ivoa.spec.1223D} protocol provides capabilities for the discovery, description, 
 access, and retrieval of multi-dimensional image datasets, including 2-D images as well 
 as datacubes of three or more dimensions. SIA data discovery is based on the ObsCore Data 
 Model, which primarily describes data products by the physical axes (spatial, spectral, 
@@ -727,7 +738,7 @@ defined elsewhere, but SIA also allows for direct access to retrieval.
 
 \subsection{SimDAL}
 
-The Simulation Data Access Layer protocol defines a set of resources and associated 
+The Simulation Data Access Layer (SimDAL) \citep{2017ivoa.spec.0320L} protocol defines a set of resources and associated 
 actions to discover and retrieve simulations and numerical models in the Virtual Observatory. 
 SimDAL and the Simulation Data Model are dedicated to cover the needs for the publication 
 and retrieval of any kind of simulations: N-body or MHD simulations, numerical models of 
@@ -743,7 +754,7 @@ implementation technology.
 
 \subsection{SLAP}
 
-The Simple Line Access Protocol is an IVOA Data Access protocol which defines a protocol 
+The Simple Line Access Protocol (SLAP) \citep{2010ivoa.specQ1209O} is an IVOA data access protocol which defines a protocol 
 for retrieving spectral lines coming from various Spectral Line Data Collections through a 
 uniform interface within the VO framework. These lines can be either observed or theoretical 
 and will be typically used to identify emission or absorption features in astronomical 
@@ -758,7 +769,7 @@ use of the support provided by the Simple Spectral Line Data Model
 
 \subsection{SSAP}
 
-The Simple Spectral Access Protocol defines a uniform interface to remotely discover and 
+The Simple Spectral Access Protocol (SSAP) \citep{2012ivoa.spec.0210T} defines a uniform interface to remotely discover and 
 access one dimensional spectra. SSA is a member of an integrated family of data access 
 altogether comprising the Data Access Layer (DAL) of the IVOA. SSA is based on a more 
 general data model capable of describing most tabular spectrophotometric data, including 
@@ -783,14 +794,14 @@ data collection to be accessed.
 
 \subsection{SODA} 
 
-The Server-side Operations for Data Access API for low-level data access or server side 
+The Server-side Operations for Data Access (SODA) \citep{2017ivoa.spec.0517B} API for low-level data access or server side 
 data processing. The initial version describes operations for extracting a subsection of a data
 file using astronomical coordinates; Future evolution is expected to include performing 
 various kinds of operations: transformations, pixel operations, and applying functions to the data.
 
 \subsection{TAP}
 
-The Table Access Protocol defines a service protocol for accessing general table data, 
+The Table Access Protocol (TAP) \citep{2019ivoa.spec.0927D} defines a service protocol for accessing general table data, 
 including astronomical catalogs as well as general database tables. Access is provided 
 for both database and table metadata as well as for actual table data. This version of 
 the protocol includes support for multiple query languages, including queries specified 
@@ -804,7 +815,7 @@ multiple TAP services.
 
 \subsection{VTP}
 
-The VOEvent Transport Protocol formalizes a TCP-based protocol for VOEvent transportation 
+The VOEvent Transport Protocol (VTP) \citep{2017ivoa.spec.0320S} formalizes a TCP-based protocol for VOEvent transportation 
 that has been in use by members of the VOEvent community for several years and discusses 
 the topology of the event distribution network. It is intended to act as a reference for 
 the production of compliant protocol implementations. 
@@ -823,7 +834,7 @@ and science platforms...
 
 \subsection{PDL}
 
-The Parameter Description Language defines a language where parameters are described in a 
+The Parameter Description Language (PDL) \citep{2014ivoa.spec.0523Z} defines a language where parameters are described in a 
 rigorous data model. With no loss of generality, we will represent this data model using 
 XML. It intends to be a expressive language for self-descriptive web services exposing 
 the semantic nature of input and output parameters, as well as all necessary complex 
@@ -831,13 +842,13 @@ constraints. PDL is a step forward towards true web services interoperability.
  
 \subsection{UWS} 
 
-The Universal Worker Service (UWS) pattern defines how to manage asynchronous execution 
+The Universal Worker Service (UWS) \citep{2016ivoa.spec.1024H} pattern defines how to manage asynchronous execution 
 of jobs on a service. Any application of the pattern defines a family of related services 
 with a common service contract. Possible uses of the pattern are also described. 
 
 \subsection{VOSI} 
 
-This VO Service Interface describes the minimum interface that a web service requires to 
+This VO Service Interface (VOSI) \citep{2017ivoa.spec.0524G} describes the minimum interface that a web service requires to 
 participate in the world-wide network of VO services. Note that this is not required of 
 standard VO services developed prior to this specification, although uptake is strongly 
 encouraged on any subsequent revision. All new standard VO services, however, must feature 
@@ -845,14 +856,10 @@ a VOSI-compliant interface.
 
 \subsection{VOSpace}
 
-The VOSpace API defines an interface to distributed storage. This specification presents the 
+The VOSpace \citep{2018ivoa.spec.0621G} API defines an interface to distributed storage. This specification presents the 
 second RESTful version of the interface. It specifies how VO agents and applications can 
 use network attached data stores to persist and exchange data in a standard way. 
 
-\subsection{Science platforms?}
-
-TODO: some forward-looking text here about the motivation, plans, and promise?
-
-\bibliography{ivoatex/ivoabib}
+\bibliography{ivoatex/ivoabib,ivoatex/docrepo}
 
 \end{document}
