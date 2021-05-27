@@ -166,11 +166,6 @@ important or notable part of the IVOA standard.
 A white rounded box around several standards indicates a group of standards that share 
 dependencies (to simplify the diagrams).
 
-All IVOA standards documents are published in the IVOA Document Repository:
-
-https://www.ivoa.net/documents/
-
-
 \section{Authentication and Authorization}
 
 Authentication is a process by which you verify that someone is who they claim they 
@@ -181,6 +176,10 @@ industry standards and technologies that suit the use cases of the IVOA communit
 in this area provide some recommendations and ``glue'' so that participants (application
 developers, metadata and data providers, and resource providers) can easily implement interoperable
 systems.
+
+Authentication and authorization are generally orthogonal to other standards and there are minimal
+direct dependencies on them. Implementors of other standards (e.g. Sec.~\ref{dal} and \ref{gws}) 
+``combine'' these A \& A recommendations where necessary to support local policies and requirements.
 
 \begin{figure}[h]
 \centering
@@ -303,7 +302,7 @@ discussed below.
 \caption{Semantics Standards and Dependencies}
 \label{fig:semdeps}
 \end{figure}
-\
+
 \subsection{Vocabularies}
 
 Vocabularies in the VO is a Recommendation for how to build and use
@@ -453,7 +452,10 @@ the communication of supported data models to the registry.
 
 \section{Data Model Standards}
 
-TODO: Data model standards form the core for interoperable and resusable metadata and data...
+The key element for achieving interoperability among actors sharing data is the definition 
+of shared standard data models. Shared data models enable rich and robust information sharing 
+between heterogeneous providers and users through a standard structure, semantics, and formats; 
+data models are the foundation for this exchange.
 
 \begin{figure}
 \centering
@@ -662,6 +664,7 @@ Access Protocol) is presented, including service registration guidelines. Topica
 metadata dictionaries are also presented. 
 
 \section{Data Access Standards}
+\label{dal}
 
 The data access standards define API for querying and accessing data holdings.
 These standards are primarily implemented by data providers so that the community 
@@ -847,10 +850,13 @@ that has been in use by members of the VOEvent community for several years and d
 the topology of the event distribution network. It is intended to act as a reference for 
 the production of compliant protocol implementations. 
 
-\section{Resource Usage Standards}
+\section{Infrastructure Resource Standards}
+\label{gws}
 
-TODO: Resource usage standards define APIs for access to shared resources: computing, storage, 
-and science platforms...
+Infrastructure resource standards define or sanction APIs and formats to support for access 
+to shared resources: computing, storage, and science platforms. These standards borrow from
+or sanction industry standards or provide a common abstraction for users that can be implemented 
+on top of industry standard infrastructure.
 
 \begin{figure}[h]
 \centering
