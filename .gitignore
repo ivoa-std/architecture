@@ -5,4 +5,9 @@
 *.toc
 *.png
 *.svg
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
 ivoatexmeta.tex
+.DS_Store
