@@ -459,39 +459,40 @@ data models are the foundation for this exchange.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.62\textwidth]{ivoa-arch-dm.pdf}
+\includegraphics[width=0.95\textwidth]{ivoa-arch-dm.pdf}
 \caption{Data Model Standards and Dependencies}
 \label{fig:dmdeps}
 \end{figure}
 
-\subsection{VO-DML}
+\subsection{VO-DML - REC}
 
-The VO Data Modelling Language (VO-DML) \citep{2018ivoa.spec.0910L} defines a standard modelling language, or meta-model, for 
-expressing data models in the IVOA. Adopting such a uniform language for all models allows 
+The VO Data Modelling Language (VO-DML) \citep{2018ivoa.spec.0910L} defines a standard 
+modelling language, or meta-model, for expressing data models in the IVOA. 
+Adopting such a uniform language for all models allows 
 these to be used in a homogeneous manner and allows a consistent definition of reuse of one 
 model by another. The particular language defined here includes a consistent identification 
 mechanism for model which allows these to be referenced in an explicit and uniform manner 
-also from other contexts, in particular from othe IVOA standard formats such as VOTable. 
-The language defined in this specification is named VO-DML (VO Data Modeling Language). 
-VO-DML is a conceptual modeling language that is agnostic of serializations, or physical 
+also from other contexts, in particular from the IVOA standard formats such as VOTable. 
+The language defined in this specification is named VO-DML (VO Data Modelling Language). 
+VO-DML is a conceptual modelling language that is agnostic of serializations, or physical 
 representations. This allows it to be designed to fit as many purposes as possible. VO-DML 
 is directly based on UML, and can be seen as a particular representation of a UML2 Profile. 
-VO-DML is restricted to describing static data structures and from UML it only uses a subset 
-of the elements defined in its language for describing ``Class Diagrams''. Its concepts can 
+VO-DML is limited to the description of static data structures. It uses only the elements of 
+the UML language describing the "class diagrams". 
+Its concepts can 
 be easily mapped to equivalent data modelling concepts in other representations such as 
 relational databases, XML schemas and object-oriented computer languages. VO-DML has a 
 representation as a simple XML dialect named VO-DML/XML that must be used to provide the 
-formal representation of a VO-DML data model. VO-DML/XML aims to be concise, explicit and 
+formal representation of VO data models. VO-DML/XML aims to be concise, explicit and 
 easy to parse and use in code that needs to interpret annotated data sets. VO-DML as 
-described in this document is an example of a domain specific modeling language, where the 
+described in this document is an example of a domain specific modelling language, where the 
 domain here is defined as the set of data and meta-data structures handled in the IVOA and 
-Astronomy at large. VO-DML provides a custom representation of such a language and as a 
-side effect allows the creation and use of standards compliant data models outside of the 
-IVOA standards context. 
+Astronomy at large. 
 
-\subsection{CharDM} 
+\subsection{CharDM - REC} 
 
-The Characterisation Data Model (CharDM) \citep{2008ivoa.spec.0325L} defines the high level metadata necessary to describe the 
+The Characterisation Data Model (CharDM) \citep{2008ivoa.spec.0325L} defines the high 
+level metadata necessary to describe the 
 physical parameter space of observed or simulated astronomical data sets, such as 2D-images, 
 data cubes, X-ray event lists, and IFU data. This model is an abstraction which can be used 
 to derive a structured description of any relevant data and thus to facilitate its discovery 
@@ -501,29 +502,29 @@ the data axes, the range of coordinates covered by the data, and details of the 
 and resolution on each axis. These descriptions should be in terms of physical variables, 
 independent of instrumental signatures as far as possible.
 
-\subsection{ObsCoreDM}
+\subsection{ObsCoreDM - REC}
 
-The Observation Data Model Core Components (ObsCoreDM) \citep{2017ivoa.spec.0509L} specifies the metadata that are necessary to perform data 
+The Observation Data Model Core Components (ObsCoreDM) \citep{2017ivoa.spec.0509L} 
+specifies the metadata that are necessary to perform data 
 discovery when querying data centers for astronomical observations of interest. It exposes 
 use-cases to be carried out, explains the model and provides guidelines for its implementation 
 as a data access service based on the Table Access Protocol (TAP). It aims at providing a 
 simple model easy to understand and to implement by data providers that wish to publish their 
-data into the Virtual Observatory. This interface integrates data modeling and data access 
-aspects in a single service and is named ObsTAP. It will be referenced as such in the IVOA 
-registries. In this document, the Observation Data Model Core Components (ObsCoreDM) defines 
+data into the Virtual Observatory. This interface integrates data modelling and data access 
+aspects in a single service named ObsTAP that will be referenced as such in the IVOA 
+registries. The Observation Data Model Core Components (ObsCoreDM) defines 
 the core components of queryable metadata required for global discovery of observational data.
 It is meant to allow a single query to be posed to TAP services at multiple sites to perform 
 global data discovery without having to understand the details of the services present at each 
-site. It defines a minimal set of basic metadata and thus allows for a reasonable cost of 
-implementation by data providers. The combination of the ObsCoreDM with TAP is referred to 
-as an ObsTAP service. As with most of the VO Data Models, ObsCoreDM makes use of STC, Utypes, 
-Units and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM can make reference 
+site. It defines a minimal set of basic metadata and thus allows a reasonable cost of 
+implementation by data providers. As with most of the VO Data Models, ObsCoreDM makes use of STC, Utypes, 
+VOUnits and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM makes reference 
 to more complete data models such as Characterisation DM, Spectrum DM or Simple Spectral Line 
 Data Model (SSLDM). The current specification on the contrary provides guidelines for 
 implementing these concepts using the TAP protocol and answering ADQL queries. It is 
 dedicated to global discovery.
 
-\subsection{PhotDM}
+\subsection{PhotDM - REC}
 
 The Photometry Data Model (PhotDM) \citep{2013ivoa.spec.1005S} describes photometry filters, photometric systems, magnitude 
 systems, zero points and its interrelation with the other IVOA data models through a 
@@ -531,9 +532,9 @@ simple data model. Particular attention is given necessarily to optical photomet
 specifications of magnitude systems and photometric zero points are required to convert 
 photometric measurements into physical flux density units.
 
-\subsection{ProvenanceDM}
+\subsection{ProvenanceDM - REC}
 
-The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modeled, stored 
+The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modelled, stored 
 and exchanged within the astronomical community in a standardized way. We follow the 
 definition of provenance as proposed by the W3C, i.e. that ``provenance is information 
 about entities, activities, and people involved in producing a piece of data or thing, 
@@ -545,7 +546,7 @@ technical note) or a device (e.g. a camera, a telescope), learn about the people
 organizations involved in a project and assess the reliability, quality as well as the 
 usefulness of the dataset, document or device for her own scientific work. 
 
-\subsection{SimDM}
+\subsection{SimDM - REC}
 
 The Simulation Data Model (SimDM) \citep{2012ivoa.spec.0503L} describes numerical computer simulations of astrophysical systems. 
 The primary goal of this standard is to support discovery of simulations by describing those 
@@ -554,7 +555,7 @@ describing simulations. This document does not propose a protocol for using this
 IVOA protocols are being developed and are supposed to use the model, either in its original 
 form or in a form derived from the model proposed here, but more suited to the particular protocol. 
 
-\subsection{SSLDM}
+\subsection{SSLDM - REC}
 
 The Simple Spectral Lines Data Model (SSLDM) \citep{2010ivoa.spec.1209O} describes spectral line transitions. The main objective of 
 the model is to integrate with and support the Simple Line Access Protocol, with which it forms 
@@ -565,14 +566,14 @@ is considered as the result of a transition between two energy levels. Under the
 assumption, a whole set of objects and attributes have been derived to define properly the 
 necessary information to describe lines appearing in astrophysical contexts.
 
-\subsection{SpectralDM}
+\subsection{SpectralDM - REC}
 
 The Spectral Data Model \citep{2007ivoa.spec.1029M} describes the structure of spectrophotometric datasets with spectral and 
 temporal coordinates and associated metadata. This data model may be used to represent spectra, 
 time series data, segments of SED (Spectral Energy Distributions) and other spectral or temporal 
 associations. 
 
-\subsection{VOEvent} 
+\subsection{VOEvent - REC} 
 
 The VOEvent model \citep{2006ivoa.spec.1101S} defines the content and meaning of a standard information packet for 
 representing, transmitting, publishing and archiving information about a transient celestial 
@@ -594,42 +595,43 @@ quickly. This standard does not define a transport layer or the design of client
 publishers or brokers; it does not cover policy issues such as who can publish, who can build a 
 registry of events, who can subscribe to a particular registry, nor the intellectual property issues. 
 
-\subsection{STC}
+\subsection{STC - REC}
 
 The Space-Time Coordinate (STC) \citep{2007ivoa.spec.1030R} metadata for the Virtual Observatory describes the coordinate 
 axes of astronomical data. It details the various components, highlights some implementation 
 considerations, presents a complete set of UML diagrams, and discusses the relation between 
-STC and certain other parts of the Data Model. Two serializations are discussed: XML (STC-X) and
+STC and certain other parts of the Data Model. Two serializations are proposed: XML (STC-X) and
 ascii string (STC-S); the former is an integral part of the model.
+STC has been refactored in 2 separate components: Meas and Coord (see below)
 
-\subsection{Coords}
+\subsection{Coords - PR}
 
-The Coordinates Data Model (PR) covers the following concepts: description of single and multi-dimensional 
-coordinate space and coordinates within that space, cordinate frames providing metadata describing the 
+The Coordinates Data Model covers the following concepts: description of single and multi-dimensional 
+coordinate space and coordinates within that space, coordinate frames providing metadata describing the 
 origin and orientation of the coordinate space, the definition of simple domain-specific coordinate
 types for the most common use cases, and description of the coordinate systems domain space. This
 model is a refactored subset of the original STC data model.
 
-\subsection{Meas}
+\subsection{Meas - PR}
 
-The Measurements Data Model (PR) covers the description of measured or determined astronomical data 
+The Measurements Data Model covers the description of measured or determined astronomical data 
 to enable the association of the determined ``value'' with corresponding errors. In this model, 
 the ``value'' is given by the various coordinate types of the coordinates data model plus a 
 description of the error model.  This model is a refactored subset of the original STC data model.
 
 \subsection{Transform - Draft}
 
-The Transform Data Model (WD) covers the World Coordinate System transform component and includes 
+The Transform Data Model covers the World Coordinate System transform component and includes 
 the following concepts: the description of mathematical operations which form the building 
 blocks for conversions from one coordinate space to another, and the combination of individual 
 operations into an arbitrarily complex transform.
  
 \subsection{DatasetDM - Draft}
 
-The Dataset Data Model (WD) provides a data model describing the structure and content of generic 
+The Dataset Data Model provides a data model describing the structure and content of generic 
 Dataset metadata for the IVOA. This is a high-level model which is to be referenced and 
-extended by other models describing specific types of Datasets and Data products. In 
-this document, we specify the generic Dataset, as well as an ObservationDataset model 
+extended by other models describing specific types of Datasets and Data products. It specifies 
+the generic Dataset, as well as an ObservationDataset model 
 which covers the class of Datasets which are derived from an Observation. At the time of 
 this writing, there is no formal Observation-Experiment model for the IVOA, so we include 
 a hypothetical Observation-Experiment model to serve as a placeholder. 
@@ -639,9 +641,16 @@ a hypothetical Observation-Experiment model to serve as a placeholder.
 This Cube Data Model (WD) presents an abstracted representation of N-Dimensional cube datasets and 
 serves as a framework on which to construct models for more specialized Astronomical datasets. 
 
-\subsection{ObsLocTAP} 
+\subsection{Mango - Draft}
 
-The Observation Locator Table Access Protocol (ObsLocTAP, PR) defines a data model for scheduled observations 
+The MANGO model proposes a flexible way to expose data related to astronomical source objects in an interoperable way.
+It takes into account the huge diversity of source data in terms of feature description, format and usage.
+The MANGO model attaches identifiers on astronomical sources and associates to each a flexible set of parameters
+(e.g. observed physical quantities) and other information like e.g. spectra, time series or preview images.
+
+\subsection{ObsLocTAP - PR} 
+
+The Observation Locator Table Access Protocol (ObsLocTAP) defines a data model for scheduled observations 
 and a method to run queries over compliant data, using several Virtual Observatory technologies.
 The data model builds on the ObsCore data model, removing elements associated with dataset 
 access that are not available during the planning phase. In this way, this standard is focused 
@@ -653,15 +662,17 @@ of proposals, etc. As with ObsCore, a serialisation into a relational table is d
 allows users to run complex queries using the IVOA Table Access Protocol. The document also 
 prescribes how to register and discover ObsLocTAP services. 
 
-\subsection{EPN-TAP}
+\subsection{EPN-TAP - V2 Draft}
 
-The Euro Planetary Networt TAP (EPN-TAP, PR) framework describes use of TAP with the EPNcore metadata dictionary. The EPNcore 
+The Euro Planetary Network TAP \citep{2014A&C.....7...52E} framework describes use of TAP with the EPNCore metadata dictionary. 
+The EPNCore 
 metadata dictionary defines the core components that are necessary to perform data discovery 
 in the Solar System related science fields. It includes keywords to describe data products 
 coverage (temporal, spectral, spatial, photometric), origin (instrument, facility), content 
 (target, physical parameters), access, references, etc. Its implementation with TAP (Table 
 Access Protocol) is presented, including service registration guidelines. Topical extension 
-metadata dictionaries are also presented. 
+metadata dictionaries are also included. 
+EPN-TAP 1.0 hasn't been published as a formal VO standard, V2 is proposed as a draft at the time of writing. 
 
 \section{Data Access Standards}
 \label{dal}
