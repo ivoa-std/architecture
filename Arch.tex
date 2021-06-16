@@ -65,7 +65,7 @@ wherever and however they are stored, the VO enables the astronomical scientific
 community to access astronomical resources wherever and however they are stored by 
 the astronomical data and services providers. The VO provides a technical framework 
 for the providers to enable users to discover data collections and services 
-(``Findable`) and to use them for science and public outreach (``Accessible''). To 
+(``Findable'') and to use them for science and public outreach (``Accessible''). To 
 enable these functionalities in perpetuity, it defines some core astronomically-oriented 
 standards so data from different providers can be combined (``Interoperable'') to enable
 new scientific discoveries (``Reusable'').
@@ -666,23 +666,20 @@ metadata dictionaries are also presented.
 \section{Data Access Standards}
 \label{dal}
 
-The data access standards define API for querying and accessing data holdings.
+The data access standards define APIs for querying and accessing data holdings.
 These standards are primarily implemented by data providers so that the community 
 can use agreed and shared tools to interact with the data holdings.
 
-As it is visible from Fig.~\ref{fig:daldeps} interconnection of data
-access standards is, currently, quite complicated, even without taking
-into account general VO landscape dependencies. This depends on two main
-factors: standards not yet updated to rely on DALI (Sec.~\ref{dal:dali})
-and \textit{simple access} (parametric query solutions) with respect to
-\textit{relational tableset based} (supported through TAP, Sec.~\ref{dal:tap}) 
-protocols.
+As shown in Fig.~\ref{fig:daldeps}, the interconnection of data
+access standards is quite complicated, even without showing the general VO landscape 
+dependencies. This is due to two main
+factors: older standards not yet updated to rely on DALI (Sec.~\ref{dal:dali})
+and protocols providing \textit{simple access} (parametric query solutions) to
+\textit{relational tablesets} (also supported by TAP, Sec.~\ref{dal:tap}).
 
-Besides that, some specific cases and standards complete or support the
-data access solutions:
+Supporting the data access standards, we also have the following standards and specific cases:
 \begin{itemize}
-	\item ADQL: a SQL-based language to bring astrophysics specific
-solutions in querying relational databases;
+	\item ADQL: a SQL-based language to allow remote querying of relational databases, including support for astronomy operations;
 	\item VTP: a specific transport protocol to broadcast VOEvent
 messages;
 	\item SimDAL: a dedicated access protocol, using SimDM structure and
@@ -696,20 +693,17 @@ concepts to allow access to simulated data collections.
 \label{fig:daldeps}
 \end{figure}
 
-Here follow brief descriptions of the access layer's standards, roughly
-order as: baseline standards, datasets/records discovery, data access
-solutions, peculiar standards.
 
 \subsection{ADQL}
 
 The Astronomical Data Query Language (ADQL) \citep{2008ivoa.spec.1030O} has been developed based on SQL92. This document 
-describes the subset of the SQL grammar supported by ADQL. Special restrictions and 
+describes the subset of the SQL grammar supported for querying relational tablesets within the VO. Special restrictions and 
 extensions to SQL92 have been defined in order to support generic and astronomy 
 specific operations. 
 
 \subsection{ConeSearch}
 
-The (simple) Cone Search \citep{2008ivoa.specQ0222P} API specification defines a simple query protocol for retrieving 
+The (simple) Cone Search (SCS) \citep{2008ivoa.specQ0222P} API specification defines a simple query protocol for retrieving 
 records from a catalog of astronomical sources. The query describes sky position and an 
 angular distance, defining a cone on the sky. The response returns a list of astronomical 
 sources from the catalog whose positions lie within the cone, formatted as a VOTable. 
@@ -727,7 +721,7 @@ libraries to be written and widely adopted.
 
 \subsection{DataLink}
 
-The DataLink \citep{2015ivoa.spec.0617D} API specification describes the linking of data discovery metadata to access to 
+The DataLink \citep{2015ivoa.spec.0617D} API specification describes the linking of data discovery metadata to  
 the data itself, further detailed metadata, related resources, and to services that perform 
 operations on the data. The web service capability supports a drill-down into the details 
 of a specific dataset and provides a set of links to the dataset file(s) and related resources. 
@@ -738,9 +732,9 @@ VOTable document. Providers are able to describe services that are relevant to t
 
 \subsection{ObjVisSAP - Draft}
 
-The Object Visibility Simple Access Protocol (ObjVisSAP, WD) is an IVOA Data Access protocol 
-which defines the standard for retrieving object constraint-free visibility time intervals 
-through a uniform interface within the VO framework for given object coordinates to be 
+The Object Visibility Simple Access Protocol (ObjVisSAP, WD)
+provides a standard approach for retrieving object visibility time intervals. 
+The standard defines a uniform interface within the VO framework for retrieving given object coordinates to be 
 observed by a given Astronomical Observatory. The ObjVisSAP interface is meant to be 
 reasonably simple to be implemented by service providers. A basic query will be done 
 introducing a set of sky coordinates and a given time period (optional). The service 
@@ -823,7 +817,7 @@ data collection to be accessed.
 
 \subsection{SODA} 
 
-The Server-side Operations for Data Access (SODA) \citep{2017ivoa.spec.0517B} API for low-level data access or server side 
+The Server-side Operations for Data Access (SODA) \citep{2017ivoa.spec.0517B} is an API for low-level data access or server side 
 data processing. The initial version describes operations for extracting a subsection of a data
 file using astronomical coordinates; Future evolution is expected to include performing 
 various kinds of operations: transformations, pixel operations, and applying functions to the data.
