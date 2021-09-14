@@ -260,7 +260,7 @@ The VOTable \citep{2019ivoa.spec.1021O} format is an XML standard for the interc
 In this context, a table is an unordered set of rows, each of a uniform structure, as specified 
 in the table description (the table metadata). Each row in a table is a sequence of table cells, 
 and each of these contains either a primitive data type, or an array of such primitives. VOTable 
-is derived from the Astrores format \citep{astrores}, itself modeled on the FITS Table format 
+is derived from the Astrores format \citep{astrores}, itself modelled on the FITS Table format 
 \citep{std:FITS}; VOTable was designed to be close to the FITS Binary Table format. 
 
 \subsection{SAMP}
@@ -472,8 +472,8 @@ these to be used in a homogeneous manner and allows a consistent definition of r
 model by another. The particular language defined here includes a consistent identification 
 mechanism for model which allows these to be referenced in an explicit and uniform manner 
 also from other contexts, in particular from othe IVOA standard formats such as VOTable. 
-The language defined in this specification is named VO-DML (VO Data Modeling Language). 
-VO-DML is a conceptual modeling language that is agnostic of serializations, or physical 
+The language defined in this specification is named VO-DML (VO Data Modelling Language). 
+VO-DML is a conceptual modelling language that is agnostic of serializations, or physical 
 representations. This allows it to be designed to fit as many purposes as possible. VO-DML 
 is directly based on UML, and can be seen as a particular representation of a UML2 Profile. 
 VO-DML is restricted to describing static data structures and from UML it only uses a subset 
@@ -481,9 +481,9 @@ of the elements defined in its language for describing ``Class Diagrams''. Its c
 be easily mapped to equivalent data modelling concepts in other representations such as 
 relational databases, XML schemas and object-oriented computer languages. VO-DML has a 
 representation as a simple XML dialect named VO-DML/XML that must be used to provide the 
-formal representation of a VO-DML data model. VO-DML/XML aims to be concise, explicit and 
+formal representation of VO data models. VO-DML/XML aims to be concise, explicit and 
 easy to parse and use in code that needs to interpret annotated data sets. VO-DML as 
-described in this document is an example of a domain specific modeling language, where the 
+described in this document is an example of a domain specific modelling language, where the 
 domain here is defined as the set of data and meta-data structures handled in the IVOA and 
 Astronomy at large. VO-DML provides a custom representation of such a language and as a 
 side effect allows the creation and use of standards compliant data models outside of the 
@@ -508,16 +508,15 @@ discovery when querying data centers for astronomical observations of interest. 
 use-cases to be carried out, explains the model and provides guidelines for its implementation 
 as a data access service based on the Table Access Protocol (TAP). It aims at providing a 
 simple model easy to understand and to implement by data providers that wish to publish their 
-data into the Virtual Observatory. This interface integrates data modeling and data access 
-aspects in a single service and is named ObsTAP. It will be referenced as such in the IVOA 
-registries. In this document, the Observation Data Model Core Components (ObsCoreDM) defines 
+data into the Virtual Observatory. This interface integrates data modelling and data access 
+aspects in a single service named ObsTAP that will be referenced as such in the IVOA 
+registries. The Observation Data Model Core Components (ObsCoreDM) defines 
 the core components of queryable metadata required for global discovery of observational data.
 It is meant to allow a single query to be posed to TAP services at multiple sites to perform 
 global data discovery without having to understand the details of the services present at each 
-site. It defines a minimal set of basic metadata and thus allows for a reasonable cost of 
-implementation by data providers. The combination of the ObsCoreDM with TAP is referred to 
-as an ObsTAP service. As with most of the VO Data Models, ObsCoreDM makes use of STC, Utypes, 
-Units and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM can make reference 
+site. It defines a minimal set of basic metadata and thus allows a reasonable cost of 
+implementation by data providers. As with most of the VO Data Models, ObsCoreDM makes use of STC, Utypes, 
+VOUnits and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM makes reference 
 to more complete data models such as Characterisation DM, Spectrum DM or Simple Spectral Line 
 Data Model (SSLDM). The current specification on the contrary provides guidelines for 
 implementing these concepts using the TAP protocol and answering ADQL queries. It is 
@@ -533,7 +532,7 @@ photometric measurements into physical flux density units.
 
 \subsection{ProvenanceDM}
 
-The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modeled, stored 
+The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modelled, stored 
 and exchanged within the astronomical community in a standardized way. We follow the 
 definition of provenance as proposed by the W3C, i.e. that ``provenance is information 
 about entities, activities, and people involved in producing a piece of data or thing, 
