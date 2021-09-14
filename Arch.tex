@@ -206,9 +206,10 @@ protocol, the standard document describes how a delegation service is registered
 along with the services it supports. The specification also explains how one can determine 
 from a service registration that it requires the use of a supporting delegation service. 
 
-\subsection{GMS - Draft}
+\subsection{GMS}
 
-The Group Membership Service (GMS, WD) specification describes a service interface for determining 
+The Group Membership Service (GMS, Proposed Recommendation) 
+specification describes a service interface for determining 
 whether a user is a member of a group. Membership information can be used to protect access to 
 proprietary resources. When an authorization decision is needed (whether to grant or deny access 
 to a proprietary resource), a call to GMS can be made to see if the requesting user is a member 
@@ -603,7 +604,8 @@ ascii string (STC-S); the former is an integral part of the model.
 
 \subsection{Coords}
 
-The Coordinates Data Model (PR) covers the following concepts: description of single and multi-dimensional 
+The Coordinates Data Model (Proposed Recommendation) 
+covers the following concepts: description of single and multi-dimensional 
 coordinate space and coordinates within that space, cordinate frames providing metadata describing the 
 origin and orientation of the coordinate space, the definition of simple domain-specific coordinate
 types for the most common use cases, and description of the coordinate systems domain space. This
@@ -611,36 +613,16 @@ model is a refactored subset of the original STC data model.
 
 \subsection{Meas}
 
-The Measurements Data Model (PR) covers the description of measured or determined astronomical data 
+The Measurements Data Model (Proposed Recommendation)
+covers the description of measured or determined astronomical data 
 to enable the association of the determined ``value'' with corresponding errors. In this model, 
 the ``value'' is given by the various coordinate types of the coordinates data model plus a 
 description of the error model.  This model is a refactored subset of the original STC data model.
 
-\subsection{Transform - Draft}
-
-The Transform Data Model (WD) covers the World Coordinate System transform component and includes 
-the following concepts: the description of mathematical operations which form the building 
-blocks for conversions from one coordinate space to another, and the combination of individual 
-operations into an arbitrarily complex transform.
- 
-\subsection{DatasetDM - Draft}
-
-The Dataset Data Model (WD) provides a data model describing the structure and content of generic 
-Dataset metadata for the IVOA. This is a high-level model which is to be referenced and 
-extended by other models describing specific types of Datasets and Data products. In 
-this document, we specify the generic Dataset, as well as an ObservationDataset model 
-which covers the class of Datasets which are derived from an Observation. At the time of 
-this writing, there is no formal Observation-Experiment model for the IVOA, so we include 
-a hypothetical Observation-Experiment model to serve as a placeholder. 
-
-\subsection{CubeDM - Draft}
-
-This Cube Data Model (WD) presents an abstracted representation of N-Dimensional cube datasets and 
-serves as a framework on which to construct models for more specialized Astronomical datasets. 
-
 \subsection{ObsLocTAP} 
 
-The Observation Locator Table Access Protocol (ObsLocTAP, PR) defines a data model for scheduled observations 
+The Observation Locator Table Access Protocol (ObsLocTAP) (TODO: cite from ivoabib needed) 
+defines a data model for scheduled observations 
 and a method to run queries over compliant data, using several Virtual Observatory technologies.
 The data model builds on the ObsCore data model, removing elements associated with dataset 
 access that are not available during the planning phase. In this way, this standard is focused 
@@ -651,16 +633,6 @@ re-planning information propagation, follow-up of Targets of Opportunity alerts,
 of proposals, etc. As with ObsCore, a serialisation into a relational table is defined, which 
 allows users to run complex queries using the IVOA Table Access Protocol. The document also 
 prescribes how to register and discover ObsLocTAP services. 
-
-\subsection{EPN-TAP}
-
-The Euro Planetary Networt TAP (EPN-TAP, PR) framework describes use of TAP with the EPNcore metadata dictionary. The EPNcore 
-metadata dictionary defines the core components that are necessary to perform data discovery 
-in the Solar System related science fields. It includes keywords to describe data products 
-coverage (temporal, spectral, spatial, photometric), origin (instrument, facility), content 
-(target, physical parameters), access, references, etc. Its implementation with TAP (Table 
-Access Protocol) is presented, including service registration guidelines. Topical extension 
-metadata dictionaries are also presented. 
 
 \section{Data Access Standards}
 \label{dal}
@@ -734,20 +706,6 @@ This specification also includes a VOTable-specific method of providing descript
 or more services and their input(s), usually using parameter values from elsewhere in the 
 VOTable document. Providers are able to describe services that are relevant to the records 
 (usually datasets with identifiers) by including service descriptors in a result document. 
-
-\subsection{ObjVisSAP - Draft}
-
-The Object Visibility Simple Access Protocol (ObjVisSAP, WD) is an IVOA Data Access protocol 
-which defines the standard for retrieving object constraint-free visibility time intervals 
-through a uniform interface within the VO framework for given object coordinates to be 
-observed by a given Astronomical Observatory. The ObjVisSAP interface is meant to be 
-reasonably simple to be implemented by service providers. A basic query will be done 
-introducing a set of sky coordinates and a given time period (optional). The service 
-returns a list of constraint-free visibility time intervals formatted as VOTable. Thus, 
-an implementation of the service may support additional search parameters (some of which 
-may be custom to that particular service) to more finely control the selection of the 
-visibility periods. The specification also describes how the search on extra parameters 
-has to be done.
 
 \subsection{SIA}
 
