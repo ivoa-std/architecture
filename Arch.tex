@@ -1,9 +1,10 @@
-\documentclass[11pt,a4paper]{ivoa}
+\documentclass[11pt,letter]{ivoa}
 \input tthdefs
 
 \newcommand{\xtype}[1]{\texttt{#1}}
 \newcommand{\ucd}[1]{\texttt{#1}}
 
+\usepackage{longtable}
 \usepackage{listings}
 \lstloadlanguages{XML,sh}
 \lstset{flexiblecolumns=true,basicstyle=\small,tagstyle=\ttfamily}
@@ -650,7 +651,7 @@ and protocols providing \textit{simple access} (parametric query solutions) to
 
 Supporting the data access standards, we also have the following standards and specific cases:
 \begin{itemize}
-	\item ADQL: a SQL-based language to allow remote querying of relational databases, including support for astronomy operations;
+	\item ADQL: a SQL-based language to allow querying of relational databases, including support for astronomy operations;
 	\item VTP: a specific transport protocol to broadcast VOEvent
 messages;
 	\item SimDAL: a dedicated access protocol, using SimDM structure and
@@ -843,6 +844,124 @@ a VOSI-compliant interface.
 The VOSpace \citep{2018ivoa.spec.0621G} API defines an interface to distributed storage. This specification presents the 
 second RESTful version of the interface. It specifies how VO agents and applications can 
 use network attached data stores to persist and exchange data in a standard way. 
+
+\section{Acronym Lookup Table}
+
+\begin{longtable}[t]{l l}
+        \sptablerule
+        \textbf{Acronym} & \textbf{Expansion} \\
+        \sptablerule
+        {ADQL} & 
+        {Astronomical Data Query Language - standard} \\
+        {API} & 
+        {Application programming Interface} \\
+        {CDP} &
+        {Credential Delegation Protocol - standard} \\
+        {CharDM} &
+        {Characterisation Data Model - standard} \\
+        {ConeSearch} &
+        {Cone Search - simple positional search service standard} \\
+        {Coords} &
+        {Coordinates - astronomical coordinates standard} \\
+        {DALI} &
+        {Data Access Layer Interface - common components standard} \\
+        {DataLink} &
+        {Data Link - linking metadata to data standard} \\
+        {GMS} &
+        {Group Membership Service - standard} \\
+        {HiPS} &
+        {Hierarchical Progressive Survey - standard} \\
+        {Identifier} &
+        {Identifier standard for URI(s) with the ``ivo'' scheme} \\
+        {IVOA} &
+        {International Virtual Observatory Alliance} \\
+        {Meas} &
+        {Measurements - astronomical measurements standard} \\
+        {MOC} &
+        {Multi-Order Coverage - metadata standard} \\
+        {ObsCoreDM} &
+        {Observation Core Data Model - standard} \\
+        {ObsLocTAP}  &
+        {Observation Locator (relational model) for TAP - standard} \\
+        {PDL} &
+        {Parameter Description Language - standard} \\
+        {PhotDM} &
+        {Photometry Data Model - standard} \\
+        {PR} &
+        {Proposed Recommendation - the "proposed" status for standards} \\
+        {ProvenanceDM} &
+        {Provenance Data Model - standard} \\
+        {REC} &
+        {Recommendation - the final "recommended" status for standards} \\
+        {Registry Interface} &
+        {Registry Interface - standard} \\
+        {RegTAP} &
+        {Registry (relational model) for TAP - standard} \\
+        {Resource Metadata} &
+        {Resource Metadata - model/serialisation standard} \\
+        {SAMP} &
+        {Simple Application Messagign Protocol - stanadrd} \\
+        {SIA} &
+        {Simple Image Access - standard} \\
+        {SIAP} &
+        {Simple Image Access Protocol - see SIA}  \\
+        {SimDAL} &
+        {Simulation Data Access Layer - standard} \\
+        {SimDM} &
+        {Simulation Data Model - standard} \\
+        {SimpleDALRegExt} &
+        {Simple Data Access Layer Registry Extension - standard} \\
+        {SLAP} &
+        {Simple Line Access Protocol - standard} \\
+        {SODA}  &
+        {Server-side Operations for Data Access - standard} \\
+        {SpectralDM} &
+        {Spectral Data Model - standard} \\
+        {SSAP} &
+        {Simple Spectral Access Protocol - standard} \\
+        {SSLDM} &
+        {Simple Spectral Line Data Model - standard} \\
+        {SSO} &
+        {Single Sign On - standard} \\
+        {StandardsRegExt} &
+        {Standards Registry Extension - standard} \\
+        {STC} &
+        {Space Time Coordinates - standard} \\
+        {TAP} &
+        {Table Access Protocol - standard} \\
+        {TAPRegExt} &
+        {Table Access Protocol Registry Extension - standard} \\
+        {UCD} &
+        {Univeral Content Descriptor - standard} \\
+        {URI}  &
+        {Universal Resource Identifider - standard} \\
+        {UWS}  &
+        {Univeral Worker service - standard} \\
+        {Vocabularies} &
+        {Vocabularies standard for the IVOA} \\
+        {VODataService} &
+        {Virtual Observatory Data Service service metadata - standard} \\
+        {VO-DML} &
+        {Virtual Observatory Data Modelling Language - standard} \\
+        {VOEvent}  &
+        {Virtual Observatory Event - standard} \\
+        {VOResource} &
+        {Virtual Observatory Resource - metadata standard} \\
+        {VOSI} &
+        {Virtual Observatory Support Interfaces - common components standard} \\
+        {VOSpace} &
+        {Virtual Observatory Space - user storage standard} \\
+        {VOTable} &
+        {Virtual Observatory Table - standard} \\
+        {VOUnits} &
+        {Virtual Observatory Units - standard} \\
+        {VTP} &
+        {VOEvent Transport Protocol - standard} \\
+        {WD} & 
+        {Working Draft - early "draft" status for standards} \\
+        \sptablerule
+\end{longtable}
+
 
 \bibliography{ivoatex/ivoabib,ivoatex/docrepo,localrefs}
 
