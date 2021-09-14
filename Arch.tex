@@ -206,9 +206,10 @@ protocol, the standard document describes how a delegation service is registered
 along with the services it supports. The specification also explains how one can determine 
 from a service registration that it requires the use of a supporting delegation service. 
 
-\subsection{GMS - Draft}
+\subsection{GMS}
 
-The Group Membership Service (GMS, WD) specification describes a service interface for determining 
+The Group Membership Service (GMS, Proposed Recommendation) 
+specification describes a service interface for determining 
 whether a user is a member of a group. Membership information can be used to protect access to 
 proprietary resources. When an authorization decision is needed (whether to grant or deny access 
 to a proprietary resource), a call to GMS can be made to see if the requesting user is a member 
@@ -260,7 +261,7 @@ The VOTable \citep{2019ivoa.spec.1021O} format is an XML standard for the interc
 In this context, a table is an unordered set of rows, each of a uniform structure, as specified 
 in the table description (the table metadata). Each row in a table is a sequence of table cells, 
 and each of these contains either a primitive data type, or an array of such primitives. VOTable 
-is derived from the Astrores format \citep{astrores}, itself modeled on the FITS Table format 
+is derived from the Astrores format \citep{astrores}, itself modelled on the FITS Table format 
 \citep{std:FITS}; VOTable was designed to be close to the FITS Binary Table format. 
 
 \subsection{SAMP}
@@ -472,8 +473,8 @@ these to be used in a homogeneous manner and allows a consistent definition of r
 model by another. The particular language defined here includes a consistent identification 
 mechanism for model which allows these to be referenced in an explicit and uniform manner 
 also from other contexts, in particular from othe IVOA standard formats such as VOTable. 
-The language defined in this specification is named VO-DML (VO Data Modeling Language). 
-VO-DML is a conceptual modeling language that is agnostic of serializations, or physical 
+The language defined in this specification is named VO-DML (VO Data Modelling Language). 
+VO-DML is a conceptual modelling language that is agnostic of serializations, or physical 
 representations. This allows it to be designed to fit as many purposes as possible. VO-DML 
 is directly based on UML, and can be seen as a particular representation of a UML2 Profile. 
 VO-DML is restricted to describing static data structures and from UML it only uses a subset 
@@ -481,9 +482,9 @@ of the elements defined in its language for describing ``Class Diagrams''. Its c
 be easily mapped to equivalent data modelling concepts in other representations such as 
 relational databases, XML schemas and object-oriented computer languages. VO-DML has a 
 representation as a simple XML dialect named VO-DML/XML that must be used to provide the 
-formal representation of a VO-DML data model. VO-DML/XML aims to be concise, explicit and 
+formal representation of VO data models. VO-DML/XML aims to be concise, explicit and 
 easy to parse and use in code that needs to interpret annotated data sets. VO-DML as 
-described in this document is an example of a domain specific modeling language, where the 
+described in this document is an example of a domain specific modelling language, where the 
 domain here is defined as the set of data and meta-data structures handled in the IVOA and 
 Astronomy at large. VO-DML provides a custom representation of such a language and as a 
 side effect allows the creation and use of standards compliant data models outside of the 
@@ -508,16 +509,15 @@ discovery when querying data centers for astronomical observations of interest. 
 use-cases to be carried out, explains the model and provides guidelines for its implementation 
 as a data access service based on the Table Access Protocol (TAP). It aims at providing a 
 simple model easy to understand and to implement by data providers that wish to publish their 
-data into the Virtual Observatory. This interface integrates data modeling and data access 
-aspects in a single service and is named ObsTAP. It will be referenced as such in the IVOA 
-registries. In this document, the Observation Data Model Core Components (ObsCoreDM) defines 
+data into the Virtual Observatory. This interface integrates data modelling and data access 
+aspects in a single service named ObsTAP that will be referenced as such in the IVOA 
+registries. The Observation Data Model Core Components (ObsCoreDM) defines 
 the core components of queryable metadata required for global discovery of observational data.
 It is meant to allow a single query to be posed to TAP services at multiple sites to perform 
 global data discovery without having to understand the details of the services present at each 
-site. It defines a minimal set of basic metadata and thus allows for a reasonable cost of 
-implementation by data providers. The combination of the ObsCoreDM with TAP is referred to 
-as an ObsTAP service. As with most of the VO Data Models, ObsCoreDM makes use of STC, Utypes, 
-Units and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM can make reference 
+site. It defines a minimal set of basic metadata and thus allows a reasonable cost of 
+implementation by data providers. As with most of the VO Data Models, ObsCoreDM makes use of STC, Utypes, 
+VOUnits and UCDs. The ObsCoreDM can be serialized as a VOTable. ObsCoreDM makes reference 
 to more complete data models such as Characterisation DM, Spectrum DM or Simple Spectral Line 
 Data Model (SSLDM). The current specification on the contrary provides guidelines for 
 implementing these concepts using the TAP protocol and answering ADQL queries. It is 
@@ -533,7 +533,7 @@ photometric measurements into physical flux density units.
 
 \subsection{ProvenanceDM}
 
-The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modeled, stored 
+The Provenance Data Model \citep{2020ivoa.spec.0411S} describes how provenance information can be modelled, stored 
 and exchanged within the astronomical community in a standardized way. We follow the 
 definition of provenance as proposed by the W3C, i.e. that ``provenance is information 
 about entities, activities, and people involved in producing a piece of data or thing, 
@@ -604,7 +604,8 @@ ascii string (STC-S); the former is an integral part of the model.
 
 \subsection{Coords}
 
-The Coordinates Data Model (PR) covers the following concepts: description of single and multi-dimensional 
+The Coordinates Data Model (Proposed Recommendation) 
+covers the following concepts: description of single and multi-dimensional 
 coordinate space and coordinates within that space, cordinate frames providing metadata describing the 
 origin and orientation of the coordinate space, the definition of simple domain-specific coordinate
 types for the most common use cases, and description of the coordinate systems domain space. This
@@ -612,36 +613,16 @@ model is a refactored subset of the original STC data model.
 
 \subsection{Meas}
 
-The Measurements Data Model (PR) covers the description of measured or determined astronomical data 
+The Measurements Data Model (Proposed Recommendation)
+covers the description of measured or determined astronomical data 
 to enable the association of the determined ``value'' with corresponding errors. In this model, 
 the ``value'' is given by the various coordinate types of the coordinates data model plus a 
 description of the error model.  This model is a refactored subset of the original STC data model.
 
-\subsection{Transform - Draft}
-
-The Transform Data Model (WD) covers the World Coordinate System transform component and includes 
-the following concepts: the description of mathematical operations which form the building 
-blocks for conversions from one coordinate space to another, and the combination of individual 
-operations into an arbitrarily complex transform.
- 
-\subsection{DatasetDM - Draft}
-
-The Dataset Data Model (WD) provides a data model describing the structure and content of generic 
-Dataset metadata for the IVOA. This is a high-level model which is to be referenced and 
-extended by other models describing specific types of Datasets and Data products. In 
-this document, we specify the generic Dataset, as well as an ObservationDataset model 
-which covers the class of Datasets which are derived from an Observation. At the time of 
-this writing, there is no formal Observation-Experiment model for the IVOA, so we include 
-a hypothetical Observation-Experiment model to serve as a placeholder. 
-
-\subsection{CubeDM - Draft}
-
-This Cube Data Model (WD) presents an abstracted representation of N-Dimensional cube datasets and 
-serves as a framework on which to construct models for more specialized Astronomical datasets. 
-
 \subsection{ObsLocTAP} 
 
-The Observation Locator Table Access Protocol (ObsLocTAP, PR) defines a data model for scheduled observations 
+The Observation Locator Table Access Protocol (ObsLocTAP) (TODO: cite from ivoabib needed) 
+defines a data model for scheduled observations 
 and a method to run queries over compliant data, using several Virtual Observatory technologies.
 The data model builds on the ObsCore data model, removing elements associated with dataset 
 access that are not available during the planning phase. In this way, this standard is focused 
@@ -652,16 +633,6 @@ re-planning information propagation, follow-up of Targets of Opportunity alerts,
 of proposals, etc. As with ObsCore, a serialisation into a relational table is defined, which 
 allows users to run complex queries using the IVOA Table Access Protocol. The document also 
 prescribes how to register and discover ObsLocTAP services. 
-
-\subsection{EPN-TAP}
-
-The Euro Planetary Networt TAP (EPN-TAP, PR) framework describes use of TAP with the EPNcore metadata dictionary. The EPNcore 
-metadata dictionary defines the core components that are necessary to perform data discovery 
-in the Solar System related science fields. It includes keywords to describe data products 
-coverage (temporal, spectral, spatial, photometric), origin (instrument, facility), content 
-(target, physical parameters), access, references, etc. Its implementation with TAP (Table 
-Access Protocol) is presented, including service registration guidelines. Topical extension 
-metadata dictionaries are also presented. 
 
 \section{Data Access Standards}
 \label{dal}
@@ -729,20 +700,6 @@ This specification also includes a VOTable-specific method of providing descript
 or more services and their input(s), usually using parameter values from elsewhere in the 
 VOTable document. Providers are able to describe services that are relevant to the records 
 (usually datasets with identifiers) by including service descriptors in a result document. 
-
-\subsection{ObjVisSAP - Draft}
-
-The Object Visibility Simple Access Protocol (ObjVisSAP, WD)
-provides a standard approach for retrieving object visibility time intervals. 
-The standard defines a uniform interface within the VO framework for retrieving given object coordinates to be 
-observed by a given Astronomical Observatory. The ObjVisSAP interface is meant to be 
-reasonably simple to be implemented by service providers. A basic query will be done 
-introducing a set of sky coordinates and a given time period (optional). The service 
-returns a list of constraint-free visibility time intervals formatted as VOTable. Thus, 
-an implementation of the service may support additional search parameters (some of which 
-may be custom to that particular service) to more finely control the selection of the 
-visibility periods. The specification also describes how the search on extra parameters 
-has to be done.
 
 \subsection{SIA}
 
