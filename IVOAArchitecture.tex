@@ -2,7 +2,6 @@
 \input tthdefs
 
 \newcommand{\xtype}[1]{\texttt{#1}}
-\newcommand{\ucd}[1]{\texttt{#1}}
 
 \usepackage{longtable}
 \usepackage{listings}
@@ -88,7 +87,7 @@ details about the functionalities and building blocks within the different layer
 For completeness, part of the description is repeated  from  the  Level 0, so the  
 Level 1 description can be used as a self-contained block.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.9\textwidth]{archdiag1.pdf}
 \caption{IVOA Architecture Level 1}
@@ -143,7 +142,7 @@ standards in  their corresponding layer. Some  standards  have  already  been  a
 and recommended (blue boxes with an outer line) while others are still a work in progress
 (blue boxes without an outer line).
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.9\textwidth]{archdiag2.pdf}
 \caption{IVOA Architecture Level 2}
@@ -182,7 +181,7 @@ Authentication and authorization are generally orthogonal to other standards and
 direct dependencies on them. Implementors of other standards (e.g. Sec.~\ref{dal} and \ref{gws}) 
 ``combine'' these A \& A recommendations where necessary to support local policies and requirements.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.28\textwidth]{ivoa-arch-auth.pdf}
 \caption{Authentication and Authorization Standards and Dependencies}
@@ -233,7 +232,7 @@ common file formats for the exchange of data between different applications. Ano
 important component is a messaging system that enables the applications to share data 
 and take advantage of each other's functionality.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.48\textwidth]{ivoa-arch-apps.pdf}
 \caption{Application and Format Standards and Dependencies}
@@ -298,7 +297,7 @@ defining how to build and interpret these labels.  Currently, this is
 the case for unit strings and for the Unified Content Descriptors
 discussed below.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.32\textwidth]{ivoa-arch-semantics.pdf}
 \caption{Semantics Standards and Dependencies}
@@ -337,11 +336,13 @@ also be parsable by other well-known parsers.
 
 \subsection{UCD}
 
-Unified Content Descriptors (UCD) citep{2019ivoa.spec.1007G} are a way to denote astronomical data
+Unified Content Descriptors (UCD) \citep{2019ivoa.spec.1007G} are a way to 
+denote astronomical data
 quantities.  The UCD formalism first defines a list of ``atoms'', in
 effect a controlled vocabulary with a hierarchy implied through dots
 (e.g., \ucd{pos} denotes positions, \ucd{pos.eq} equatorial positions);
-this list is currently maintained as an Endorsed Note.
+this list is currently maintained as an Endorsed Note
+\citep{2021ivoa.spec.0616C}.
 
 The atoms can then be combined into more complex labels containing
 qualifications.  For instance, \ucd{phot.mag;em.opt.V} denotes a
@@ -367,7 +368,7 @@ registries, which builds upon the Open Archives Initiative Protocol for Metadata
 of said IVOA registry services. (c) A Registry of Registries as the root component of data discovery 
 in the VO. 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.70\textwidth]{ivoa-arch-registry.pdf}
 \caption{Registry Standards and Dependencies}
@@ -405,7 +406,7 @@ discovery of tabular data.
 The Registry Interface \citep{2018ivoa.spec.0723D} defines the interfaces that support interactions between applications and 
 registries as well as between the registries themselves.  It is based on a general, distributed 
 model composed of searchable and publishing registries. The specification has two main components: 
-(a) an interface for searching and (b) an interface for harvesting.  Finally, Registry Interface 
+(a) an interface for searching and (b) an interface for harvesting.  Finally, the Registry Interface 
 details the metadata used to describe registries themselves as resources using an extension of the 
 VOResource metadata schema.
 
@@ -459,7 +460,7 @@ of shared standard data models. Shared data models enable rich and robust inform
 between heterogeneous providers and users through a standard structure, semantics, and formats; 
 data models are the foundation for this exchange.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.62\textwidth]{ivoa-arch-dm.pdf}
 \caption{Data Model Standards and Dependencies}
@@ -473,7 +474,7 @@ expressing data models in the IVOA. Adopting such a uniform language for all mod
 these to be used in a homogeneous manner and allows a consistent definition of reuse of one 
 model by another. The particular language defined here includes a consistent identification 
 mechanism for model which allows these to be referenced in an explicit and uniform manner 
-also from other contexts, in particular from othe IVOA standard formats such as VOTable. 
+also from other contexts, in particular from other IVOA standard formats such as VOTable. 
 The language defined in this specification is named VO-DML (VO Data Modelling Language). 
 VO-DML is a conceptual modelling language that is agnostic of serializations, or physical 
 representations. This allows it to be designed to fit as many purposes as possible. VO-DML 
@@ -658,7 +659,7 @@ messages;
 concepts to allow access to simulated data collections.
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.90\textwidth]{ivoa-arch-dal.pdf}
 \caption{Data Access Standards and Dependencies}
@@ -810,7 +811,7 @@ to shared resources: computing, storage, and science platforms. These standards 
 or sanction industry standards or provide a common abstraction for users that can be implemented 
 on top of industry standard infrastructure.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.54\textwidth]{ivoa-arch-gws.pdf}
 \caption{Authentication and Authorization Standards and Dependencies}
@@ -845,6 +846,7 @@ The VOSpace \citep{2018ivoa.spec.0621G} API defines an interface to distributed 
 second RESTful version of the interface. It specifies how VO agents and applications can 
 use network attached data stores to persist and exchange data in a standard way. 
 
+\pagebreak
 \section{Acronym Lookup Table}
 
 \begin{longtable}[t]{l l}

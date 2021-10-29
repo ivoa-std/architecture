@@ -70,7 +70,7 @@ of the various sections) to have the box centered.
 	<rec name="SODA" x="681" y="430" w="38"/>
 	<rec name="ObsCore" x="619" y="180" w="52"/>
 	<prerec name="EPN-TAP" x="617.5" y="205" w="55"/>
-	<prerec name="ObsLocTAP" x="612" y="230" w="66"/>
+	<rec name="ObsLocTAP" x="612" y="230" w="66"/>
 
 	<!-- Data Models: x=430..580, y=250..400 -->
 	<prerec name="VODML-Map" x="440" y="355" w="72"/>
