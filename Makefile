@@ -1,4 +1,6 @@
 # ivoatex Makefile.  The ivoatex/README for the targets available.
+#AUTHOR_EMAIL = pdowler.cadc@gmail.com
+#IVOA_GROUP = TCG
 
 # short name of your document (edit $DOCNAME.tex; would be like RegTAP)
 DOCNAME = IVOAArchitecture
@@ -20,7 +22,8 @@ SOURCES = $(DOCNAME).tex
 FIGURES = 
 
 # List of PDF figures (for vector graphics)
-VECTORFIGURES = archdiag0.pdf archdiag1.pdf archdiag2.pdf
+VECTORFIGURES = archdiag0.pdf archdiag1.pdf archdiag2.pdf \
+	ivoa-arch-apps.pdf ivoa-arch-auth.pdf ivoa-arch-dal.pdf ivoa-arch-dm.pdf ivoa-arch-gws.pdf
 
 # Additional files to distribute (e.g., CSS, schema files, examples...)
 AUX_FILES = 
