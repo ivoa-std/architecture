@@ -6,10 +6,10 @@
 DOCNAME = IVOAArchitecture
 
 # count up; you probably do not want to bother with versions <1.0
-DOCVERSION = 2.0
+DOCVERSION = Draft 2.1
 
 # Publication date, ISO format; update manually for "releases"
-DOCDATE = 2021-10-29
+DOCDATE = 2024-08-29
 
 # What is it you're writing: NOTE, WD, PR, or REC
 DOCTYPE = EN
