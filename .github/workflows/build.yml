@@ -22,7 +22,7 @@ jobs:
     - name: Setup dependencies
       run: |
         sudo apt update
-        sudo apt install texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended xsltproc
+        sudo apt install texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended xsltproc latexmk cm-super
       
     - name: Build the document
       run: make archdiag0.pdf archdiag1.pdf archdiag2.pdf biblio forcetex
@@ -33,8 +33,8 @@ jobs:
         test -f ${{ env.doc_name }}.bbl
         
     - name: Keep the PDF artefact 
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v4
       with:
-        name: PDF Preview
         path: ${{ env.doc_name }}.pdf
+
 
