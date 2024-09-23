@@ -1,5 +1,7 @@
 \documentclass[11pt,letter]{ivoa}
-\input tthdefs
+%\documentclass[11pt,letter]{ivoatex/ivoa}
+%\input tthdefs
+\input ivoatex/tthdefs
 
 \newcommand{\xtype}[1]{\texttt{#1}}
 
@@ -16,15 +18,18 @@
 
 \ivoagroup{Technical Coordination Group}
 
-\author{Patrick Dowler}
 \author{Janet Evans}
+\author{Marco Molinaro}
+\author{Patrick Dowler}
 \author{Christophe Arviset}
 \author{Severin Gaudet}
 \author{IVOA Technical Coordination Group}
 
-\editor{Patrick Dowler, Janet Evans}
+\editor{Janet Evans, Marco Molinaro}
 
+\previousversion{IVOAArchitecture-2.0-20211029}
 \previousversion{IVOAArchitecture-1.0-20101123}
+
 
 \begin{document}
 
@@ -208,7 +213,7 @@ from a service registration that it requires the use of a supporting delegation 
 
 \subsection{GMS}
 
-The Group Membership Service (GMS, Proposed Recommendation) 
+The Group Membership Service (GMS) \citep{2022ivoa.spec.0222M}
 specification describes a service interface for determining 
 whether a user is a member of a group. Membership information can be used to protect access to 
 proprietary resources. When an authorization decision is needed (whether to grant or deny access 
@@ -250,7 +255,7 @@ indexing scheme that leads to practical implementations.
 
 \subsection{MOC}
 
-The Multi-Order Coverage Map (MOC) \citep{2019ivoa.spec.1007F} is a method to specify coverage as an arbitrary sky regions. 
+The Multi-Order Coverage Map (MOC) \citep{2022ivoa.spec.0727F} is a method to specify coverage as an arbitrary sky regions. 
 The goal is to be able to provide a very fast comparison mechanism between coverage maps. 
 The mechanism is based on the HEALPix sky tessellation algorithm. It is essentially a 
 simple way to map regions of the sky into hierarchically grouped predefined cells. 
@@ -306,7 +311,7 @@ discussed below.
 
 \subsection{Vocabularies}
 
-Vocabularies in the VO is a Recommendation for how to build and use
+Vocabularies in the VO \citep{2021ivoa.spec.0525D} describes how to build and use
 consensus vocabularies in the Virtual Observatory.  It supports both
 ``soft'' vocabularies based on the Simple Knowledge Organisation System
 SKOS and ``hard'' vocabularies based on RDF schema, where the latter
@@ -323,7 +328,7 @@ within them.
 
 \subsection{VOUnits}
 
-VOUnits \citep{2014ivoa.spec.0523D} describes how to serialise unit strings within the Virtual
+VOUnits \citep{2023ivoa.spec.1215G} describes how to serialise unit strings within the Virtual
 Observatory, in particular (but by no means limited to) in the
 \xmlel{unit} attribute in VOTable.  It hence defines the atomic units,
 prefixes applicable, and the syntax of expressions using such prefixed
@@ -396,7 +401,7 @@ applications. Another intended use is as a language for services to describe the
 
 \subsection{VODataService}
 
-The VODataService \citep{2010ivoa.spec.1202P} standard makes discovery possible.  It is an encoding standard that enables one to 
+The VODataService \citep{2021ivoa.spec.1102D} standard makes discovery possible.  It is an encoding standard that enables one to 
 describe how the data underlying the resource covers the sky as well as their frequency and time. 
 VODataService also enables detailed descriptions of tables that include information useful to the 
 discovery of tabular data. 
@@ -429,7 +434,7 @@ is geared towards allowing easy authoring of queries.
 
 \subsection{SimpleDALRegExt}
 
-Describing Simple Data Access Services (SimpleDALRegExt) \citep{2017ivoa.spec.0530P} 
+Describing Simple Data Access Services (SimpleDALRegExt) \citep{2022ivoa.spec.0222D} 
 is part of the registry standards that make discovery of Simple DAL services 
 possible (e.g., SIAP, SCS, SSAP, SLAP).  SimpleDALRegExt refers to an encoding standard for a 
 specialized extension of the IVOA Resource Metadata that is useful for describing VO Simple DAL 
@@ -492,6 +497,11 @@ Astronomy at large. VO-DML provides a custom representation of such a language a
 side effect allows the creation and use of standards compliant data models outside of the 
 IVOA standards context. 
 
+\subsection{MIVOT} 
+
+The Model Instances in VOTables (MIVOT) \citep{2023ivoa.spec.0620M} defines a syntax to map VOTable data to any model serizalized in VO-DML. The annotation operates as a bridge between the data and the model. It associates the column/param metadata from the VOTable to the data model elements (class, attributes, types, etc.) of a standardized IVOA data model, expressed in the Virtual Observatory Data Modeling Language (here after VO-DML). It also brings up VOTable data or metadata that were possibly missing in the table metadata. The data model elements are grouped in an independent annotation block complying with the MIVOT XML syntax. This annotation block is added as an extra resource element at the top of the VOTable result resource. The MIVOT syntax allows to describe a data structure as a hierarchy of classes. It is also able to represent relations and composition between them.It can also build up data model objects by aggregating instances from different tables of the VOTable. Missing metadata can also be provided using MIVOT, for instance by completing coordinate system description, or by providing curation tracing. The annotation block is made of re-usable bricks that facilitate the development of tools on both client and server sides. The adopted design does not alter the original VOTable content. The backward compatibility is preserved thanks to the limited impact of the annotations on legacy clients.
+
+
 \subsection{CharDM} 
 
 The Characterisation Data Model (CharDM) \citep{2008ivoa.spec.0325L} defines the high level metadata necessary to describe the 
@@ -527,7 +537,7 @@ dedicated to global discovery.
 
 \subsection{PhotDM}
 
-The Photometry Data Model (PhotDM) \citep{2013ivoa.spec.1005S} describes photometry filters, photometric systems, magnitude 
+The Photometry Data Model (PhotDM) \citep{2022ivoa.spec.1101S} describes photometry filters, photometric systems, magnitude 
 systems, zero points and its interrelation with the other IVOA data models through a 
 simple data model. Particular attention is given necessarily to optical photometry where 
 specifications of magnitude systems and photometric zero points are required to convert 
@@ -569,7 +579,7 @@ necessary information to describe lines appearing in astrophysical contexts.
 
 \subsection{SpectralDM}
 
-The Spectral Data Model \citep{2007ivoa.spec.1029M} describes the structure of spectrophotometric datasets with spectral and 
+The Spectral Data Model \citep{2023ivoa.spec.1215C} describes the structure of spectrophotometric datasets with spectral and 
 temporal coordinates and associated metadata. This data model may be used to represent spectra, 
 time series data, segments of SED (Spectral Energy Distributions) and other spectral or temporal 
 associations. 
@@ -604,18 +614,18 @@ considerations, presents a complete set of UML diagrams, and discusses the relat
 STC and certain other parts of the Data Model. Two serializations are discussed: XML (STC-X) and
 ascii string (STC-S); the former is an integral part of the model.
 
-\subsection{Coords}
+\subsection{Coordinates}
 
-The Coordinates Data Model (Proposed Recommendation) 
+The Coordinates Data Model \citep{2022ivoa.specQ1004R} 
 covers the following concepts: description of single and multi-dimensional 
 coordinate space and coordinates within that space, cordinate frames providing metadata describing the 
 origin and orientation of the coordinate space, the definition of simple domain-specific coordinate
 types for the most common use cases, and description of the coordinate systems domain space. This
 model is a refactored subset of the original STC data model.
 
-\subsection{Meas}
+\subsection{Measurements}
 
-The Measurements Data Model (Proposed Recommendation)
+The Measurements Data Model \citep{2022ivoa.spec.1004R} 
 covers the description of measured or determined astronomical data 
 to enable the association of the determined ``value'' with corresponding errors. In this model, 
 the ``value'' is given by the various coordinate types of the coordinates data model plus a 
@@ -669,7 +679,7 @@ concepts to allow access to simulated data collections.
 
 \subsection{ADQL}
 
-The Astronomical Data Query Language (ADQL) \citep{2008ivoa.spec.1030O} has been developed based on SQL92. This document 
+The Astronomical Data Query Language (ADQL) \citep{2023ivoa.spec.1215M} has been developed based on SQL92. This document 
 describes the subset of the SQL grammar supported for querying relational tablesets within the VO. Special restrictions and 
 extensions to SQL92 have been defined in order to support generic and astronomy 
 specific operations. 
@@ -694,7 +704,7 @@ libraries to be written and widely adopted.
 
 \subsection{DataLink}
 
-The DataLink \citep{2015ivoa.spec.0617D} API specification describes the linking of data discovery metadata to  
+The DataLink \citep{2023ivoa.spec.1215B} API specification describes the linking of data discovery metadata to  
 the data itself, further detailed metadata, related resources, and to services that perform 
 operations on the data. The web service capability supports a drill-down into the details 
 of a specific dataset and provides a set of links to the dataset file(s) and related resources. 
@@ -783,6 +793,7 @@ various kinds of operations: transformations, pixel operations, and applying fun
 
 \subsection{TAP}
 \label{dal:tap}
+\label{epn:tap}
 
 The Table Access Protocol (TAP) \citep{2019ivoa.spec.0927D} defines a service protocol for accessing general table data, 
 including astronomical catalogs as well as general database tables. Access is provided 
@@ -795,6 +806,11 @@ query capability permits queries against an arbitrarily large list of astronomic
 providing a simple spatial cross-matching capability. More sophisticated distributed 
 cross-matching capabilities are possible by orchestrating a distributed query across 
 multiple TAP services. 
+
+\subsection{EPN-TAP}
+
+The EPN-TAP protocol  \citep{2022ivoa.spec.0822E} defines a service protocol for describing and accessing data related to the study of the Solar System in general, including observational, modeled, and experimental data. It consists of 1) the usual TAP mechanism; 2) the EPNcore metadata dictionary; 3) a set of rules defining table structure and parameter usage. EPN-TAP relies on the TAP  standard ({Sec.~\ref{epn:tap}) with no modification. All EPN-TAP services are accessible through standard TAP clients.
+
 
 \subsection{VTP}
 
@@ -869,6 +885,8 @@ use network attached data stores to persist and exchange data in a standard way.
         {Data Access Layer Interface - common components standard} \\
         {DataLink} &
         {Data Link - linking metadata to data standard} \\
+       {EPN-TAP} &
+       {Solar System Table access protocol} \\
         {GMS} &
         {Group Membership Service - standard} \\
         {HiPS} &
@@ -879,6 +897,8 @@ use network attached data stores to persist and exchange data in a standard way.
         {International Virtual Observatory Alliance} \\
         {Meas} &
         {Measurements - astronomical measurements standard} \\
+        {MIVOT} &
+        {MIVOT - model instances in VO tables} \\
         {MOC} &
         {Multi-Order Coverage - metadata standard} \\
         {ObsCoreDM} &
