@@ -30,14 +30,14 @@ AUX_FILES =
 
 include ivoatex/Makefile
 
-archdiag2.svg: archdiag-full.xml ivoatex/make-archdiag.xslt
-	$(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt archdiag-full.xml
+#archdiag2.svg: archdiag-full.xml ivoatex/make-archdiag.xslt
+#	$(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt archdiag-full.xml
 
-archdiag1.svg: ivoatex/make-archdiag.xslt
-	echo '<archdiag xmlns="http://ivoa.net/archdiag"/>' | $(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt - 
+#archdiag1.svg: ivoatex/make-archdiag.xslt
+#	echo '<archdiag xmlns="http://ivoa.net/archdiag"/>' | $(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt - 
 
-archdiag0.svg: ivoatex/make-archdiag.xslt
-	echo '<archdiag0 xmlns="http://ivoa.net/archdiag"/>' | $(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt -
+#archdiag0.svg: ivoatex/make-archdiag.xslt
+#	echo '<archdiag0 xmlns="http://ivoa.net/archdiag"/>' | $(XSLTPROC) -o $@ ivoatex/make-archdiag.xslt -
 
 
 
