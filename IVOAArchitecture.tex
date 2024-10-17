@@ -410,17 +410,17 @@ An interoperable data infrastructure needs common languages in many
 places: From common designations of units to labels for physical
 quantities, from common names of reference frames and time scales to
 mutually understandable subject categories, from relationship types
-between VO resources (``this service publishes images from A and spectrafom B'') to fixed names for the messengers that produced the signals
+between VO resources (``this service publishes images from A and spectra from B'') to fixed names for the messengers that produced the signals
 recorded.
 
 The VO's semantics standards provide the basis of forming such
 consensual ``vocabularies'', which are, at their root, sets of labeled
 concepts (which in turn are sets of entities clients deal with).  We
-also take care that, whereever possible, our vocabularies are
+also take care that, wherever possible, our vocabularies are
 interoperable with the rest of the semantic web by adopting the W3C's
 Resource Description Framework RDF.
 
-The vocabularies themselves are usually introduced by standards that usethem and are then maintained on the VO's repository of
+The vocabularies themselves are usually introduced by standards that use them and are then maintained on the VO's repository of
 vocabularies\footnote{\url{http://www.ivoa.net/rdf}}.  In some cases,
 however, we go beyond RDF, usually because the labels have an intrinsic
 syntax.  In these cases, the Semantics WG issues separate standards
@@ -484,7 +484,7 @@ magnitude in the V band, \ucd{phot.flux;em.opt.V} a flux in the same
 band.  The UCD standard defines how these compound UCDs are built, and
 the UCD list defines restrictions as to where in complete UCDs atoms canbe used: some atoms can only be ``primary'', others are only available
 as qualifiers.  For instance, \ucd{stat.error} can only appear at the
-start of a UCD, which ensures that ``Error in redshift'' will be encodedas \ucd{stat.error;src.redshift} rather than the other way round.
+start of a UCD, which ensures that ``Error in redshift'' will be encoded as \ucd{stat.error;src.redshift} rather than the other way round.
 
 The UCD ecosystem is completed by another standard on how new atoms are
 adopted to the list of UCDs.
@@ -704,7 +704,7 @@ IVOA standards context.
 \subsection{MIVOT} 
 
 The Model Instances in VOTables (MIVOT) \citep{2023ivoa.spec.0620M}
-defines a syntax to map VOTable data to any model serizalized in VO-DML.
+defines a syntax to map VOTable data to any model serialized in VO-DML.
 The annotation operates as a bridge between the data and the model. It
 associates the column/param metadata from the VOTable to the data model
 elements (class, attributes, types, etc.) of a standardized IVOA data
@@ -715,7 +715,7 @@ grouped in an independent annotation block complying with the MIVOT XML
 syntax. This annotation block is added as an extra resource element at
 the top of the VOTable result resource. The MIVOT syntax allows to
 describe a data structure as a hierarchy of classes. It is also able to
-represent relations and composition between them.It can also build up
+represent relations and composition between them. It can also build up
 data model objects by aggregating instances from different tables of the
 VOTable. Missing metadata can also be provided using MIVOT, for instance
 by completing coordinate system description, or by providing curation
